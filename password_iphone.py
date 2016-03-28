@@ -2,7 +2,7 @@
 
 import ui
 import clipboard
-from random import s_alpmple
+from random import sample
 from re import search
 
 view = ui.View()
@@ -60,16 +60,16 @@ def set_pw(s):
     for k in range(choices):
         if s_num.value is True:
             while search('[0-9]', pw[k]) is None:
-                pw[k] = ''.join(s_alpmple(s, length))
+                pw[k] = ''.join(sample(s, length))
             pw.append('')
         else:
-            pw[k] = ''.join(s_alpmple(s, length))
+            pw[k] = ''.join(sample(s, length))
             pw.append('')
     pw.remove('')
     return pw
 
 
-def buttons_dis_alpble():
+def buttons_disable():
     for k in range(choices):
         buttons[k].enabled = False
 
@@ -86,7 +86,7 @@ def button_tapped(sender):
         clipboard.set(sender.title)
         sender.font = ('<system-bold>', 16)
         sender.title = prefix + sender.title + suffix
-        buttons_dis_alpble()
+        buttons_disable()
         sender.enabled = True
     else:
         clipboard.set(sender.title[len(prefix):-len(suffix)])

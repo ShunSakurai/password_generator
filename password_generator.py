@@ -4,7 +4,7 @@ cd Dropbox/Codes/password
 py password_generator.py
 '''
 import tkinter
-from random import s_alpmple
+from random import sample
 from re import search
 
 view = tkinter.Frame()
@@ -16,14 +16,14 @@ subview_right.grid(row=1, column=0, sticky=tkinter.N)
 
 var_sym = tkinter.IntVar()
 var_alp = tkinter.IntVar()
-var_choices = tkinter.IntVar()
-var = (var_sym, var_alp, var_choices)
+var_num = tkinter.IntVar()
+var = (var_sym, var_alp, var_num)
 
 lname = ('sym', 'alp', 'num')
 s_sym = tkinter.Checkbutton(subview_right, text=lname[0])
 s_alp = tkinter.Checkbutton(subview_right, text=lname[1])
-s_choices = tkinter.Checkbutton(subview_right, text=lname[2])
-switch = (s_sym, s_alp, s_choices,)
+s_num = tkinter.Checkbutton(subview_right, text=lname[2])
+switch = (s_sym, s_alp, s_num,)
 
 for sw in switch:
     sw['variable'] = var[switch.index(sw)]
@@ -58,7 +58,7 @@ def set_s():
         s += [chr(c) for c in range(65, 91)]
         s += [chr(c) for c in range(97, 123)]
 
-    if var_choices.get() == 1:
+    if var_num.get() == 1:
         s += [chr(c) for c in range(48, 58)]
 
     if length > len(s):
@@ -72,12 +72,12 @@ def set_pw(s):
     length = sc_length.get()
     pw = ['']
     for k in range(choices):
-        if var_choices.get() == 1 and length != 1:
+        if var_num.get() == 1 and length != 1:
             while search('[0-9]', pw[k]) is None:
-                pw[k] = ''.join(s_alpmple(s, length))
+                pw[k] = ''.join(sample(s, length))
             pw.append('')
         else:
-            pw[k] = ''.join(s_alpmple(s, length))
+            pw[k] = ''.join(sample(s, length))
             pw.append('')
     pw.remove('')
     return pw
@@ -89,14 +89,14 @@ def change_state(state):
 
 
 def button_tapped(self):
-    if self.widget['state'] == 'dis_alpbled':
+    if self.widget['state'] == 'disabled':
         pass
     else:
         prefix = 'You chose '
         suffix = ' !'
         if self.widget['text'].startswith(prefix) is False:
             self.widget['text'] = prefix + self.widget['text'] + suffix
-            change_state('dis_alpbled')
+            change_state('disabled')
         else:
             pass
 
