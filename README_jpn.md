@@ -31,10 +31,12 @@
 ## 使用方法
 プログラムを開くには、Password Generator.exeまたはPassword Generatorをダブルクリックします。
 
+![UI](https://raw.github.com/wiki/ShunSakurai/password/password_ui.png)
+
 画面右側で、選択肢の一つをクリックします。これで、クリップボードにコピーされます。
 画面左側で、設定を変更します。記号、英字、数字の入切を切り替えることができます。パスワードの長さと選択肢の数は、1から20の任意の数に設定できます。
 
-![]()
+![選択](https://raw.github.com/wiki/ShunSakurai/password/password_selected.png)
 
 このツールは、パスワードを生成し、クリップボードにコピーする機能のみを提供します。
 保存機能は用意されておらず、今後追加する予定もありません。
