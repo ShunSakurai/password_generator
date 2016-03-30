@@ -3,6 +3,8 @@ Simple password generators
 
 [Japanese README](https://github.com/ShunSakurai/password/blob/master/README_jpn.md) is also available.
 
+![UI](https://raw.github.com/wiki/ShunSakurai/password/password_ui.png)
+
 ## Description
 The motivation behind this tool was to create a **simple** password generator that I can copy the password to clipboard with just one click.
 Many programs and websites out there require three actions (drag on the password, right-click, and copy).
@@ -30,8 +32,6 @@ This program needs to be **kept in the folder** to work. It does not work by its
 
 ## Usage
 You can open the program by double-clicking Password Generator.exe / Password Generator or its alias.
-
-![UI](https://raw.github.com/wiki/ShunSakurai/password/password_ui.png)
 
 In the right pane, click one of the choices. It is now copied to your clipboard!
 Use the left pane to modify settings. You can switch symbols / alphabetical characters / numeral characters on and off. The length of a password and the number of choices can be set to any figure from 1 to 20.
