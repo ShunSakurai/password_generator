@@ -10,12 +10,12 @@
 このツールは、Pythonとtkinterを使用してコーディングし、[py2exe](http://www.py2exe.org/)を使用して.exe形式で配布、[py2app](https://pythonhosted.org/py2app/)を使用してMacの.app形式で配布するものです。
 
 ## インストール
-現在、WindowsとMacに対応しています。iPhone版も、[Pythonista](http://omz-software.com/pythonista/)のコードとして入手できます。URLスキームのpythonista://password_iphone.pyを使用して実行したり、[Pythonista Shortcut](http://omz-software.com/pythonista/shortcut/)を使用してホーム画面に追加することができます。
+現在、WindowsとMacに対応しています。プログラムファイルは[Releases(リリース)](https://github.com/ShunSakurai/password/releases)で入手できます。iPhone版も、[Pythonista](http://omz-software.com/pythonista/)のコードとして入手できます。URLスキームのpythonista://password_iphone.pyを使用して実行したり、[Pythonista Shortcut](http://omz-software.com/pythonista/shortcut/)を使用してホーム画面に追加することができます。
 
 ### Windows
 インストーラーは現在開発中です。しばらくの間は、次を実行してください。
 
-- 「dist」フォルダー全体をダウンロードします(すべてのファイルをzip形式でダウンロードして、そのフォルダーを選択します)
+- dist.zipをダウンロードし、解凍します
 - フォルダー名を「Password」など、お好みの名前に変更します。
 - フォルダーをC:\Program Filesに移動します
 - .exeファイルへのショートカットを作成し、それをデスクトップ、ツール用フォルダー、C:\ProgramData\Microsoft\Windows\Start Menu\Programsなどに追加します
@@ -23,7 +23,7 @@
 このプログラムは、動作するために**フォルダーに含めたまま**にしておく必要があります。プログラム単体では動作しません。
 
 ### Mac
-- 「dist」フォルダー全体をダウンロードします(すべてのファイルをzip形式でダウンロードして、そのフォルダーを選択します)
+- Password.Generator.app.zipをダウンロードし、解凍します
 - .appファイルをお好みの場所に移動します。このフォルダーは削除してかまいません
 - Password Generator.appを右クリックして、「パッケージの内容を表示」をクリックし、Password Generator.app/Contents/MacOS/Password Generatorのエイリアスを作成します
 - Password Generatorのエイリアスを「アプリケーション」フォルダーに移動します
@@ -41,14 +41,6 @@
 このツールは、パスワードを生成し、クリップボードにコピーする機能のみを提供します。
 保存機能は用意されておらず、今後追加する予定もありません。
 
-## 履歴
-
-文頭の「*」は、バグ修正を示します。
-
-### ver.1.0.0、2016年3月28日
-- GitHubに追加
-- Readme.mdを作成
-
 ## 今後追加予定の機能
 ### 開発中の機能
 - コードの[リーダブル](http://www.amazon.co.jp/dp/4873115655)化
@@ -63,6 +55,18 @@
 - キーボードショートカット(例: 1から10)
 
 すぐに使用した機能がある場合はご連絡ください。
+
+## 履歴
+
+文頭の「*」は、バグ修正を示します。
+履歴の詳細は、[Releases(リリース)](https://github.com/ShunSakurai/password/releases)でご覧ください。
+
+### v1.1.0、2016年3月31日
+- バイナリファイルを配布
+
+### v1.0.0、2016年3月28日
+- GitHubに追加
+- Readme.mdを作成
 
 ## 貢献
 これは個人的なプロジェクトにすぎず、どのようなコントリビュートをいただけるのかわかりません。どんなご意見や貢献も歓迎いたします。
