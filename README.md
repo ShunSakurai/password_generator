@@ -10,12 +10,12 @@ Many programs and websites out there require three actions (drag on the password
 This tool is coded in Python with tkinter and is distributed in .exe format thanks to [py2exe](http://www.py2exe.org/), and in Mac .app format thanks to [py2app](https://pythonhosted.org/py2app/).
 
 ## Installation
-It is currently available for Windows and Mac. iPhone version is also available as [Pythonista](http://omz-software.com/pythonista/) code. You can run it by using URL scheme pythonista://password_iphone.py or add it to Home screen using [Pythonista Shortcut](http://omz-software.com/pythonista/shortcut/).
+It is currently available for Windows and Mac at [Releases](https://github.com/ShunSakurai/password/releases). iPhone version is also available as [Pythonista](http://omz-software.com/pythonista/) code. You can run it by using URL scheme pythonista://password_iphone.py or add it to Home screen using [Pythonista Shortcut](http://omz-software.com/pythonista/shortcut/).
 
 ### Windows
 Installer is now being developed. For the moment, please do the following:
 
-- Download the whole "dist" folder (Download the whole thing in zip and choose that folder)
+- Download dist.zip and decompress it
 - Rename the folder to "Password" or any name you like
 - Move it to C:\Program Files
 - Create a shortcut of the .exe file and add it to your Desktop, to your tools folder, or to C:\ProgramData\Microsoft\Windows\Start Menu\Programs
@@ -23,7 +23,7 @@ Installer is now being developed. For the moment, please do the following:
 This program needs to be **kept in the folder** to work. It does not work by itself.
 
 ### Mac
-- Download the whole "dist" folder (Download the whole thing in zip and choose that folder)
+- Download Password.Generator.app.zip and decompress it
 - Place the .app file somewhere you like. You can discard the folder
 - Right-click Password Generator.app, click "Show Package Contents" and create an alias of Password Generator.app/Contents/MacOS/Password Generator
 - Move the alias of Password Generator to "Applications" folder
@@ -41,14 +41,6 @@ Use the left pane to modify settings. You can switch symbols / alphabetical char
 The tool only generates passwords and allows you to copy one to the clipboard.
 No storing feature is provided nor planned.
 
-## History
-
-"*" at the beginning means bug-fixing.
-
-### ver.1.0.0, March 28, 2016
-- Added to GitHub
-- Created Readme.md
-
 ## Features to come
 ### Working on
 - Making it [readable](http://www.amazon.com/dp/0596802293)
@@ -63,6 +55,18 @@ No storing feature is provided nor planned.
 - Keyboard shortcuts (e.g. 1 to 10)
 
 Please let me know if you need any of the features as soon as possible.
+
+## History
+
+"*" at the beginning means bug-fixing.
+For detailed history, please go to [Releases](https://github.com/ShunSakurai/password/releases).
+
+### v1.1.0, March 31, 2016
+- Distributed the binaries
+
+### v1.0.0, March 28, 2016
+- Added to GitHub
+- Created Readme.md
 
 ## Contribution
 This is just a personal project and I do not really know what kind of contribution I may get. Any feedback and contribution is welcome!
