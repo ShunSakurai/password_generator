@@ -31,10 +31,12 @@ This program needs to be **kept in the folder** to work. It does not work by its
 ## Usage
 You can open the program by double-clicking Password Generator.exe / Password Generator or its alias.
 
+![UI](https://raw.github.com/wiki/ShunSakurai/password/password_ui.png)
+
 In the right pane, click one of the choices. It is now copied to your clipboard!
 Use the left pane to modify settings. You can switch symbols / alphabetical characters / numeral characters on and off. The length of a password and the number of choices can be set to any figure from 1 to 20.
 
-![]()
+![Selected](https://raw.github.com/wiki/ShunSakurai/password/password_selected.png)
 
 The tool only generates passwords and allows you to copy one to the clipboard.
 No storing feature is provided nor planned.
