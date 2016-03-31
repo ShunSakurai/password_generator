@@ -63,10 +63,11 @@ For detailed history, please go to [Releases](https://github.com/ShunSakurai/pas
 
 ### v1.1.0, March 31, 2016
 - Distributed the binaries
+- Created README_jpn.md
 
 ### v1.0.0, March 28, 2016
 - Added to GitHub
-- Created Readme.md
+- Created README.md
 
 ## Contribution
 This is just a personal project and I do not really know what kind of contribution I may get. Any feedback and contribution is welcome!
