@@ -6,7 +6,7 @@ from distutils.core import setup
 import py2exe
 
 SCRIPT = 'password_generator.py'
-VERSION = "1.1.0"
+VERSION = "1.1.2"
 DATA_FILES = []
 NAME = "Password Generator"
 OPTIONS = {'bundle_files': 2}
