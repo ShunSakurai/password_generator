@@ -6,7 +6,7 @@ py setup_mac.py py2app
 from setuptools import setup
 
 APP = ['password_generator.py']
-AppVersion = "1.1.0"
+AppVersion = "1.1.2"
 DATA_FILES = []
 NAME = "Password Generator"
 OPTIONS = {'argv_emulation': False}

@@ -47,8 +47,6 @@ No storing feature is provided nor planned.
 - Ability to store settings
 - Preparing installer
 - Preparing icon
-- Elaborating design in the Windows version
-- * Fix the bug where button is not re-enabled on Windows
 
 ### Maybe later
 - Ability to edit characters used
@@ -60,6 +58,10 @@ Please let me know if you need any of the features as soon as possible.
 
 "*" at the beginning means bug-fixing.
 For detailed history, please go to [Releases](https://github.com/ShunSakurai/password/releases).
+
+### v1.1.2, April 8, 2016
+- Reduced the button border width for the Windows version
+- * Fixed the bug where button is not re-enabled on Windows
 
 ### v1.1.0, March 31, 2016
 - Distributed the binaries
