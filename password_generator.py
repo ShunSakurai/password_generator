@@ -95,6 +95,7 @@ def button_tapped(self):
         pass
     elif self.widget['text'].startswith(prefix) is False:
         self.widget['text'] = prefix + self.widget['text'] + suffix
+        self.widget['borderwidth'] = 2
         change_state('disabled')
         self.widget['state'] = 'normal'
     else:
@@ -113,6 +114,7 @@ def set_buttons():
     buttons = [tkinter.Button(subview_left, text='') for k in range(choices)]
     for k in range(choices):
         buttons[k]['text'] = pw[k]
+        buttons[k]['borderwidth'] = 1
         buttons[k].bind('<ButtonRelease-1>', button_tapped)
         buttons[k].grid(row=k)
     change_state('normal')
