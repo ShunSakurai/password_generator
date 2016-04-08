@@ -26,6 +26,10 @@ This program needs to be **kept in the folder** to work. It does not work by its
 
 ### Mac
 - Download Password.Generator.app.zip and decompress it
+- Move the .app file to "Applications" folder. You can discard the folder
+
+If it cannot run by itself, please do the following:
+
 - Place the .app file somewhere you like. You can discard the folder
 - Right-click Password Generator.app, click "Show Package Contents" and create an alias of Password Generator.app/Contents/MacOS/Password Generator
 - Move the alias of Password Generator to "Applications" folder
