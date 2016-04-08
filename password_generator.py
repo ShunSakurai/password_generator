@@ -89,16 +89,16 @@ def change_state(state):
 
 
 def button_tapped(self):
+    prefix = 'You chose '
+    suffix = ' !'
     if self.widget['state'] == 'disabled':
         pass
+    elif self.widget['text'].startswith(prefix) is False:
+        self.widget['text'] = prefix + self.widget['text'] + suffix
+        change_state('disabled')
+        self.widget['state'] = 'normal'
     else:
-        prefix = 'You chose '
-        suffix = ' !'
-        if self.widget['text'].startswith(prefix) is False:
-            self.widget['text'] = prefix + self.widget['text'] + suffix
-            change_state('disabled')
-        else:
-            pass
+        pass
 
         view.clipboard_clear()
         view.clipboard_append(self.widget['text'][len(prefix):-len(suffix)])
