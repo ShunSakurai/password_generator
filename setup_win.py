@@ -1,12 +1,12 @@
 '''
-cd Dropbox/Codes/password/windows
+cd Dropbox/Codes/password
 py -3.4 setup_win.py py2exe
 '''
 from distutils.core import setup
 import py2exe
 
 SCRIPT = 'password_generator.py'
-VERSION = "1.1.2"
+VERSION = "1.1.3"
 DATA_FILES = []
 NAME = "Password Generator"
 OPTIONS = {'bundle_files': 2}
