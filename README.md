@@ -26,11 +26,11 @@ This program needs to be **kept in the folder** to work. It does not work by its
 
 ### Mac
 - Download Password.Generator.app.zip and decompress it
-- Move the .app file to "Applications" folder. You can discard the folder which has contained the app
+- Move the .app file to "Applications" folder. You can remove the folder which has contained the app
 
 If it cannot run by itself, please do the following:
 
-- Place the .app file somewhere you like. You can discard the folder which has contained the app
+- Place the .app file somewhere you like. You can remove the folder which has contained the app
 - Right-click Password Generator.app, click "Show Package Contents" and create an alias of Password Generator.app/Contents/MacOS/Password Generator
 - Move the alias of Password Generator to "Applications" folder
 
@@ -62,6 +62,9 @@ Please let me know if you need any of the features as soon as possible.
 
 "*" at the beginning means bug-fixing.
 For detailed history, please go to [Releases](https://github.com/ShunSakurai/password/releases).
+
+### v1.1.3, April 13, 2016
+- * Corrected indent so that password is copied every time necessary
 
 ### v1.1.2, April 8, 2016
 - Reduced the button border width for the Windows version
