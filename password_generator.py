@@ -83,7 +83,7 @@ def set_pw(s):
     return pw
 
 
-def change_state(state):
+def change_all_state(state):
     for child in subview_left.winfo_children():
         child['state'] = state
 
@@ -92,17 +92,17 @@ def button_tapped(self):
     prefix = 'You chose '
     suffix = ' !'
     if self.widget['state'] == 'disabled':
-        pass
+        return
     elif self.widget['text'].startswith(prefix) is False:
         self.widget['text'] = prefix + self.widget['text'] + suffix
         self.widget['borderwidth'] = 2
-        change_state('disabled')
+        change_all_state('disabled')
         self.widget['state'] = 'normal'
     else:
         pass
 
-        view.clipboard_clear()
-        view.clipboard_append(self.widget['text'][len(prefix):-len(suffix)])
+    view.clipboard_clear()
+    view.clipboard_append(self.widget['text'][len(prefix):-len(suffix)])
 
 
 def set_buttons():
@@ -117,7 +117,7 @@ def set_buttons():
         buttons[k]['borderwidth'] = 1
         buttons[k].bind('<ButtonRelease-1>', button_tapped)
         buttons[k].grid(row=k)
-    change_state('normal')
+    change_all_state('normal')
 
 
 for sw in switch:
