@@ -4,7 +4,7 @@ cd Dropbox/Codes/password
 py password_generator.py
 '''
 import tkinter
-from random import sample
+import random
 from re import search
 
 view = tkinter.Frame()
@@ -20,10 +20,10 @@ var_num = tkinter.IntVar()
 var = (var_sym, var_alp, var_num)
 
 lname = ('sym', 'alp', 'num')
-s_sym = tkinter.Checkbutton(subview_right, text=lname[0])
-s_alp = tkinter.Checkbutton(subview_right, text=lname[1])
-s_num = tkinter.Checkbutton(subview_right, text=lname[2])
-switch = (s_sym, s_alp, s_num,)
+sw_sym = tkinter.Checkbutton(subview_right, text=lname[0])
+sw_alp = tkinter.Checkbutton(subview_right, text=lname[1])
+sw_num = tkinter.Checkbutton(subview_right, text=lname[2])
+switch = (sw_sym, sw_alp, sw_num,)
 
 for sw in switch:
     sw['variable'] = var[switch.index(sw)]
@@ -74,10 +74,10 @@ def set_pw(s):
     for k in range(choices):
         if var_num.get() == 1 and length != 1:
             while search('[0-9]', pw[k]) is None:
-                pw[k] = ''.join(sample(s, length))
+                pw[k] = ''.join(random.sample(s, length))
             pw.append('')
         else:
-            pw[k] = ''.join(sample(s, length))
+            pw[k] = ''.join(random.sample(s, length))
             pw.append('')
     pw.remove('')
     return pw
@@ -127,6 +127,7 @@ set_buttons()
 
 
 def refresh_tapped(self):
+    random.seed()
     set_buttons()
 
 button_refresh = tkinter.Button(subview_right, text='refresh')

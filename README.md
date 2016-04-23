@@ -50,7 +50,6 @@ No storing feature is provided nor planned.
 ## Features to come
 ### Working on
 - Make the code more [readable](http://www.amazon.com/dp/0596802293)
-- Set it to reseed when refreshing
 - Add the ability to store settings
 - Prepare the installer
 - Prepare the icon
@@ -65,6 +64,10 @@ Please let me know if you need any of the features as soon as possible.
 
 "*" at the beginning means bug-fixing.
 For detailed history, please go to [Releases](https://github.com/ShunSakurai/password/releases).
+
+### v1.2.0, April 23, 2016
+- Reseed when refreshing
+- Reduce the size of the .exe and the .app files
 
 ### v1.1.3, April 13, 2016
 - * Correct indent so that password is copied every time necessary
