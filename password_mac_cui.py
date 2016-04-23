@@ -3,7 +3,7 @@
 cd Dropbox/Codes/password
 py password_mac_cui.py
 '''
-from random import sample
+import random
 from re import search
 
 try:
@@ -46,10 +46,10 @@ def set_pw(s, choices):
     for k in range(choices):
         if s_num is True:
             while search('[0-9]', pw[k]) is None:
-                pw[k] = ''.join(sample(s, length))
+                pw[k] = ''.join(random.sample(s, length))
             pw.append('')
         else:
-            pw[k] = ''.join(sample(s, length))
+            pw[k] = ''.join(random.sample(s, length))
             pw.append('')
         print(str(k+1)+'\t'+pw[k])
     pw.remove('')
@@ -82,6 +82,7 @@ choice = ask()
 r.destroy()
 
 while choice == 0:
+    random.seed()
     names_list = ['length', 'num of choices', 'switch symbol', 'switch alphabet', 'switch number']
     parameters_list = [length, choices, s_sym, s_alp, s_num]
     print('\n')
