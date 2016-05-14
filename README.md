@@ -1,23 +1,23 @@
-﻿# password
+﻿# password_generator
 Simple password generators
 
-[Japanese README](https://github.com/ShunSakurai/password/blob/master/README_jpn.md) is also available.
+[Japanese README](https://github.com/ShunSakurai/password_generator/blob/master/README_jpn.md) is also available.
 
-![UI](https://raw.github.com/wiki/ShunSakurai/password/password_ui.png)
+![UI](https://raw.github.com/wiki/ShunSakurai/password_generator/password_ui.png)
 
 ## Description
-The motivation behind this tool was to create a **simple** password generator that I can copy the password to clipboard with just one click.
+The purpose of developing this tool is to create a **simple** password generator that lets the user copy the generated password to the clipboard with a single click.
 Many programs and websites out there require three actions (drag on the password, right-click, and copy) to do this.
 
-This tool is coded in Python with tkinter and is distributed in .exe format thanks to [py2exe](http://www.py2exe.org/), and in Mac .app format thanks to [py2app](https://pythonhosted.org/py2app/).
+This program is coded in Python with tkinter and is distributed in .exe format through [py2exe](http://www.py2exe.org/), and in Mac .app format through [py2app](https://pythonhosted.org/py2app/).
 
 ## Installation
-It is currently available for Windows and Mac at [Releases](https://github.com/ShunSakurai/password/releases). iPhone version is also available as a [Pythonista](http://omz-software.com/pythonista/) code. You can run it by using the URL scheme pythonista://password_iphone.py or add it to the Home screen using [Pythonista Shortcut](http://omz-software.com/pythonista/shortcut/).
+It is currently available for Windows and Mac at [Releases](https://github.com/ShunSakurai/password_generator/releases). An iPhone version is also available as a [Pythonista](http://omz-software.com/pythonista/) code. You can run it by using the URL scheme pythonista://password_iphone.py or add it to the home screen using [Pythonista Shortcut](http://omz-software.com/pythonista/shortcut/).
 
-If you have Python environment installed, you can run the source code with `python(3) password_generator.py` or `import password_generator` on any OS.
+If you have the Python environment installed, you can run the source code with `python(3) password_generator.py` or `import password_generator` on any OS.
 
 ### Windows
-Installer is now being developed. For the moment, please do the following:
+Installer is now under development. In the meantime, please follow the steps below:
 
 - Download dist.zip and decompress it
 - Rename the folder to "Password" or to any name you like
@@ -30,7 +30,7 @@ This program needs to be **kept in the folder** to work. It does not work by its
 - Download Password.Generator.app.zip and decompress it
 - Move the .app file to the "Applications" folder. You can remove the enclosing folder
 
-If it cannot run by itself, please do the following:
+If it does not run itself, please do the following:
 
 - Place the .app file somewhere you like. You can remove the enclosing folder
 - Right-click Password Generator.app, click "Show Package Contents" and create an alias of Password Generator.app/Contents/MacOS/Password Generator
@@ -40,41 +40,44 @@ If it cannot run by itself, please do the following:
 You can open the program by double-clicking Password Generator.exe / Password Generator or its alias.
 
 In the right pane, click one of the choices. It is now copied to your clipboard!
-Use the left pane to modify settings. You can switch symbols / alphabetical characters / numeral characters on and off. The length of a password and the number of choices can be set to any figure from 1 to 20.
+Use the left pane to modify settings. You can switch symbols / alphabetical characters / numerical characters on and off. The length of a password and the number of choices generated can be set to any figure from 1 to 20.
 
-![Selected](https://raw.github.com/wiki/ShunSakurai/password/password_selected.png)
+![Selected](https://raw.github.com/wiki/ShunSakurai/password_generator/password_selected.png)
 
 The tool only generates passwords and allows you to copy one to the clipboard.
-No storing feature is provided nor planned.
+No storing feature is provided or planned to be.
 
 ## Features to come
 ### Working on
 - Make the code more [readable](http://www.amazon.com/dp/0596802293)
-- Add the ability to store settings
+- Add an ability to store the settings
 - Prepare the installer
 - Prepare the icon
 
 ### Maybe later
-- Add the ability to edit characters used
+- Add an ability to edit characters used
 - Add keyboard shortcuts (e.g. 1 to 10)
 
-Please let me know if you need any of the features as soon as possible.
+Please [let me know](https://app.asana.com/-/share?s=132674863519248-e1JyDAuWLW0WnFErIjTrbz57EAmE077JUvQ45Y5pF43-29199191293549) if you need any of the features as soon as possible.
 
 ## History
 
 "*" at the beginning means bug-fixing.
-For detailed history, please go to [Releases](https://github.com/ShunSakurai/password/releases).
+For detailed history, please go to [Releases](https://github.com/ShunSakurai/password_generator/releases).
+
+### Newest version
+- Add contact information
 
 ### v1.2.0, April 23, 2016
 - Reseed when refreshing
 - Reduce the size of the dist folder and the .app file
 
 ### v1.1.3, April 13, 2016
-- * Correct indent so that password is copied every time necessary
+- * Correct indent so that password is copied every time when necessary
 
 ### v1.1.2, April 8, 2016
 - Reduce the button border width for the Windows version
-- * Fix the bug where button is not re-enabled on Windows
+- * Resolve an issue where button is not re-enabled on Windows
 
 ### v1.1.0, March 31, 2016
 - Distribute the binaries
@@ -85,7 +88,7 @@ For detailed history, please go to [Releases](https://github.com/ShunSakurai/pas
 - Create README.md
 
 ## Contribution
-This is just a personal project and I do not really know what kind of contribution I may get. Any feedback and contribution is welcome!
+This is just a personal project and I do not really know what kind of contribution I may get. Any [feedback and contribution](https://app.asana.com/-/share?s=132674863519248-e1JyDAuWLW0WnFErIjTrbz57EAmE077JUvQ45Y5pF43-29199191293549) is welcome!
 
 ## License
 You can use it for free.
@@ -95,7 +98,7 @@ You can use it for free.
 ## Basic idea
 - Prepare a string containing the following characters
 - Choose characters randomly from the string below
-- If "num" checkbutton is on, and the "length" is 2 and over, the password contains at least one numeral character
+- If "num" checkbutton is on, and the "length" is 2 and over, the password contains at least one numerical character
 - **No character is duplicated in one password**, unless the password is longer than the length of the string. This can be less secure, but I prefer the passwords look this way
 
 > string = [chr(c) for c in range(33, 127)]

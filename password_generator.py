@@ -12,7 +12,7 @@ view = tkinter.Frame()
 subview_left = tkinter.Frame(view)
 subview_right = tkinter.Frame(view)
 subview_left.grid(row=1, column=1)
-subview_right.grid(row=1, column=0, sticky=tkinter.N)
+subview_right.grid(row=1, column=0, sticky='n')
 
 var_sym = tkinter.IntVar()
 var_alp = tkinter.IntVar()

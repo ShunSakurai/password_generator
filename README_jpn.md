@@ -1,9 +1,9 @@
-﻿# パスワード
+﻿# password_generator
 簡素なパスワード生成ツール
 
-[英語のREADME](https://github.com/ShunSakurai/password/blob/master/README.md)もあります。
+[英語のREADME](https://github.com/ShunSakurai/password_generator/blob/master/README.md)もあります。
 
-![UI](https://raw.github.com/wiki/ShunSakurai/password/password_ui.png)
+![UI](https://raw.github.com/wiki/ShunSakurai/password_generator/password_ui.png)
 
 ## 説明
 1クリックでクリップボードにパスワードをコピーできるような、**シンプルな**パスワード生成ツールを作りたいと思い、このツールを開発しました。
@@ -12,15 +12,15 @@
 このツールは、Pythonとtkinterを使用してコーディングし、[py2exe](http://www.py2exe.org/)を使用して.exe形式で配布、[py2app](https://pythonhosted.org/py2app/)を使用してMacの.app形式で配布するものです。
 
 ## インストール
-現在、WindowsとMacに対応しています。iPhone版も、[Pythonista](http://omz-software.com/pythonista/)のコードとして入手できます。URLスキームのpythonista://password_iphone.pyを使用して実行したり、[Pythonista Shortcut](http://omz-software.com/pythonista/shortcut/)を使用してホーム画面に追加することができます。
+現在、WindowsとMacに対応しています。プログラムファイルは[Releases(リリース)](https://github.com/ShunSakurai/password_generator/releases)で入手できます。iPhone版も、[Pythonista](http://omz-software.com/pythonista/)のコードとして入手できます。URLスキームのpythonista://password_iphone.pyを使用して実行したり、[Pythonista Shortcut](http://omz-software.com/pythonista/shortcut/)を使用してホーム画面に追加することができます。
 
 Python環境をインストールしている場合、`python(3) password_generator.py`または`import password_generator`でソースコードをMacなど任意のOSで実行できます。
 
 ### Windows
-インストーラーは現在開発中です。しばらくの間は、次を実行してください。
+インストーラーは現在開発中です。当面は、次の手順を実行してください。
 
 - dist.zipをダウンロードし、解凍します
-- フォルダー名を「Password」など、お好みの名前に変更します。
+- フォルダー名を「Password」など、お好みの名前に変更します
 - フォルダーをC:\Program Filesに移動します
 - .exeファイルへのショートカットを作成し、それをデスクトップ、ツール用フォルダー、C:\ProgramData\Microsoft\Windows\Start Menu\Programsなどに追加します
 
@@ -40,9 +40,9 @@ Python環境をインストールしている場合、`python(3) password_genera
 プログラムを開くには、Password Generator.exeまたはPassword Generatorをダブルクリックします。
 
 画面右側で選択肢の一つをクリックします。これで、クリップボードにコピーされます。
-画面左側で、設定を変更します。記号、英字、数字の入切を切り替えることができます。パスワードの長さと選択肢の数は、1から20までの任意の数に設定できます。
+画面左側で、設定を変更します。記号、英字、数字の入切を切り替えることができます。生成されるパスワードの長さと選択肢の数は、1から20までの任意の数に設定できます。
 
-![選択](https://raw.github.com/wiki/ShunSakurai/password/password_selected.png)
+![Selected](https://raw.github.com/wiki/ShunSakurai/password_generator/password_selected.png)
 
 このツールは、パスワードを生成し、クリップボードにコピーする機能のみを提供します。
 保存機能は用意されておらず、今後追加する予定もありません。
@@ -58,16 +58,19 @@ Python環境をインストールしている場合、`python(3) password_genera
 - 使用する文字を編集する機能
 - キーボードショートカットを追加(例: 1から10)
 
-すぐに使用したい機能がある場合はご連絡ください。
+すぐに使用したい機能がある場合は[ご連絡ください](https://app.asana.com/-/share?s=132674863519248-e1JyDAuWLW0WnFErIjTrbz57EAmE077JUvQ45Y5pF43-29199191293549)。
 
 ## 履歴
 
 文頭の「*」は、バグ修正を示します。
-履歴の詳細は、[Releases(リリース)](https://github.com/ShunSakurai/password/releases)でご覧ください。
+履歴の詳細は、[Releases(リリース)](https://github.com/ShunSakurai/password_generator/releases)でご覧ください。
+
+### 最新版
+- 連絡先情報を追加
 
 ### v1.2.0、2016年4月23日
 - 更新時に乱数の種を初期化
-- distフォルダーと.appファイルのファイルサイズを縮小
+- distフォルダーと.appファイルのサイズを縮小
 
 ### v1.1.3、2016年4月13日
 - * パスワードが必要なときに必ずコピーされるようにインデントを修正
@@ -85,7 +88,7 @@ Python環境をインストールしている場合、`python(3) password_genera
 - README.mdを作成
 
 ## 貢献
-これは個人的なプロジェクトにすぎませんが、どんなご意見や貢献でもいただけると幸いです。
+これは個人的なプロジェクトにすぎませんが、どんな[ご意見](https://app.asana.com/-/share?s=132674863519248-e1JyDAuWLW0WnFErIjTrbz57EAmE077JUvQ45Y5pF43-29199191293549)や貢献でもいただけると幸いです。
 
 ## 使用権限
 このツールは無料でお使いいただけます。
@@ -101,7 +104,7 @@ Python環境をインストールしている場合、`python(3) password_genera
 > string = [chr(c) for c in range(33, 127)]
 >
 > 記号:
-> 33 !、34 "、35 #、36 $、37 %、38 &、39 '、40 (、41 )、42 *、43 +、44 ,、45 -、46 .、47 /,
+> 33 !, 34 ", 35 #, 36 $, 37 %, 38 &, 39 ', 40 (, 41 ), 42 *, 43 +, 44 ,, 45 -, 46 ., 47 /,
 > 58 :、59 ;、60 <、61 =、62 >、63 ?、64 @,
 > 123 {、124 |、125 }、126~
 >
