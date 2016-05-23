@@ -21,8 +21,8 @@ Python環境をインストールしている場合、`python(3) password_genera
 
 - dist.zipをダウンロードし、解凍します
 - フォルダー名を「Password」など、お好みの名前に変更します
-- フォルダーをC:\Program Filesに移動します
-- .exeファイルへのショートカットを作成し、それをデスクトップ、ツール用フォルダー、C:\ProgramData\Microsoft\Windows\Start Menu\Programsなどに追加します
+- (任意)フォルダーをC:\Program Filesに移動します
+- (任意).exeファイルへのショートカットを作成し、それをデスクトップ、ツール用フォルダー、C:\ProgramData\Microsoft\Windows\Start Menu\Programsなどに追加します(こうすると、Windowsスタートメニューからプログラムを実行できるようになります)
 
 このプログラムが動作するには**フォルダーに含めたまま**にしておく必要があります。プログラム単体では動作しません。
 

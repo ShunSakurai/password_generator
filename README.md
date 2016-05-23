@@ -21,8 +21,8 @@ Installer is now under development. In the meantime, please follow the steps bel
 
 - Download dist.zip and decompress it
 - Rename the folder to "Password" or to any name you like
-- Move it to C:\Program Files
-- Create a shortcut of the .exe file and add it to your Desktop, to your tools folder, or to C:\ProgramData\Microsoft\Windows\Start Menu\Programs
+- (Optional) Move the folder to C:\Program Files
+- (Optional) Create a shortcut of the .exe file and add it to your Desktop, to your tools folder, or to C:\ProgramData\Microsoft\Windows\Start Menu\Programs (this way you can run the program from Windows Start Menu)
 
 This program needs to be **kept in the folder** to work. It does not work by itself.
 
@@ -88,7 +88,7 @@ For detailed history, please go to [Releases](https://github.com/ShunSakurai/pas
 - Create README.md
 
 ## Contribution
-This is just a personal project and I do not really know what kind of contribution I may get. Any [feedback and contribution](https://app.asana.com/-/share?s=132674863519248-e1JyDAuWLW0WnFErIjTrbz57EAmE077JUvQ45Y5pF43-29199191293549) is welcome!
+This is just a personal project and I do not really know what kind of contribution I may get. Any [feedback](https://app.asana.com/-/share?s=132674863519248-e1JyDAuWLW0WnFErIjTrbz57EAmE077JUvQ45Y5pF43-29199191293549) and contribution is welcome!
 
 ## License
 You can use it for free.
