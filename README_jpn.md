@@ -24,6 +24,7 @@ Python環境をインストールしている場合、`python(3) password_genera
 - (任意)フォルダーをC:\Program Filesに移動します
 - (任意).exeファイルへのショートカットを作成し、それをデスクトップ、ツール用フォルダー、C:\ProgramData\Microsoft\Windows\Start Menu\Programsなどに追加します(こうすると、Windowsスタートメニューからプログラムを実行できるようになります)
 
+更新版を使用する場合、日付が新しいファイルやフォルダーのみをコピーして上書きすることで使用できます。
 このプログラムが動作するには**フォルダーに含めたまま**にしておく必要があります。プログラム単体では動作しません。
 
 ### Mac
@@ -91,7 +92,10 @@ Python環境をインストールしている場合、`python(3) password_genera
 これは個人的なプロジェクトにすぎませんが、どんな[ご意見](https://app.asana.com/-/share?s=132674863519248-e1JyDAuWLW0WnFErIjTrbz57EAmE077JUvQ45Y5pF43-29199191293549)や貢献でもいただけると幸いです。
 
 ## 使用権限
-このツールは無料でお使いいただけます。
+このツールは無料でお使いいただけます。個人利用のみに限定します。このプログラムの使用によって生じるいかなる損害についても責任は持ちません。
+
+Pythonのrandomモジュールの擬似乱数生成器をセキュリティ目的に使用してはいけませんという注意書きがあることにご注意ください。
+https://docs.python.org/3/library/random.html#module-random
 
 © 2016 Shun Sakurai
 

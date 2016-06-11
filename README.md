@@ -24,6 +24,7 @@ Installer is now under development. In the meantime, please follow the steps bel
 - (Optional) Move the folder to C:\Program Files
 - (Optional) Create a shortcut of the .exe file and add it to your Desktop, to your tools folder, or to C:\ProgramData\Microsoft\Windows\Start Menu\Programs (this way you can run the program from Windows Start Menu)
 
+When you use an updated version, you only have to copy and overwrite the files and folders with newer dates.
 This program needs to be **kept in the folder** to work. It does not work by itself.
 
 ### Mac
@@ -91,7 +92,10 @@ For detailed history, please go to [Releases](https://github.com/ShunSakurai/pas
 This is just a personal project and I do not really know what kind of contribution I may get. Any [feedback](https://app.asana.com/-/share?s=132674863519248-e1JyDAuWLW0WnFErIjTrbz57EAmE077JUvQ45Y5pF43-29199191293549) and contribution is welcome!
 
 ## License
-You can use it for free.
+You can use it for free. Personal use only. I do not take any responsibility for any damage caused by using this program.
+
+Please note that it is stated that the pseudo-random generators of Python's random module should not be used for security purposes.
+https://docs.python.org/3/library/random.html#module-random
 
 © 2016 Shun Sakurai
 
