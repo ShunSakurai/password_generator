@@ -12,7 +12,7 @@
 このツールは、Pythonとtkinterを使用してコーディングし、[py2exe](http://www.py2exe.org/)を使用して.exe形式で配布、[py2app](https://pythonhosted.org/py2app/)を使用してMacの.app形式で配布するものです。
 
 ## インストール
-現在、WindowsとMacに対応しています。プログラムファイルは[Releases(リリース)](https://github.com/ShunSakurai/password_generator/releases)で入手できます。iPhone版も、[Pythonista](http://omz-software.com/pythonista/)のコードとして入手できます。URLスキームのpythonista://password_iphone.pyを使用して実行したり、[Pythonista Shortcut](http://omz-software.com/pythonista/shortcut/)を使用してホーム画面に追加することができます。
+現在、WindowsとMacに対応しています。プログラムファイルは[Releases(リリース)](https://github.com/ShunSakurai/password_generator/releases)で入手できます。iOS版も、[Pythonista](http://omz-software.com/pythonista/)のコードとして入手できます。URLスキームのpythonista://password_iphone.pyを使用して実行したり、[Pythonista Shortcut](http://omz-software.com/pythonista/shortcut/)を使用してホーム画面に追加することができます。
 
 Python環境をインストールしている場合、`python(3) password_generator.py`または`import password_generator`でソースコードをMacなど任意のOSで実行できます。
 
@@ -24,7 +24,7 @@ Python環境をインストールしている場合、`python(3) password_genera
 - (任意)フォルダーをC:\Program Filesに移動します
 - (任意).exeファイルへのショートカットを作成し、それをデスクトップ、ツール用フォルダー、C:\ProgramData\Microsoft\Windows\Start Menu\Programsなどに追加します(こうすると、Windowsスタートメニューからプログラムを実行できるようになります)
 
-更新版を使用する場合、日付が新しいファイルやフォルダーのみをコピーして上書きすることで使用できます。
+すでに古いバージョンをインストールして使用している場合、日付が新しいファイルやフォルダーのみをコピーして上書きすることで使用できます。
 このプログラムが動作するには**フォルダーに含めたまま**にしておく必要があります。プログラム単体では動作しません。
 
 ### Mac
@@ -36,6 +36,12 @@ Python環境をインストールしている場合、`python(3) password_genera
 - .appファイルをお好みの場所に移動します。アプリが含まれていたフォルダーは削除してかまいません
 - Password Generator.appを右クリックして、「パッケージの内容を表示」をクリックし、Password Generator.app/Contents/MacOS/Password Generatorのエイリアスを作成します
 - エイリアスを「アプリケーション」フォルダーに移動します。
+
+### iOS
+- まず、Pythonistaを購入してください
+- コードをアプリ内にコピーアンドペーストします
+- iPhone 5の画面に合うようにコードを書きました。なるべく比率でサイズが決まるようにしていますが、お使いのデバイスのサイズに応じて、必要な場合にパラメーターを変更してください
+- パスワードの長さと数は、手動で変更してください
 
 ## 使用方法
 プログラムを開くには、Password Generator.exeまたはPassword Generatorをダブルクリックします。
@@ -58,6 +64,7 @@ Python環境をインストールしている場合、`python(3) password_genera
 ### 棚上げ中の機能
 - 使用する文字を編集する機能
 - キーボードショートカットを追加(例: 1から10)
+- (iOS)パスワードの長さと数を設定するUI要素を追加
 
 すぐに使用したい機能がある場合は[ご連絡ください](https://app.asana.com/-/share?s=132674863519248-e1JyDAuWLW0WnFErIjTrbz57EAmE077JUvQ45Y5pF43-29199191293549)。
 
@@ -67,6 +74,7 @@ Python環境をインストールしている場合、`python(3) password_genera
 履歴の詳細は、[Releases(リリース)](https://github.com/ShunSakurai/password_generator/releases)でご覧ください。
 
 ### 最新版
+- iOS版についての情報を更新
 - 連絡先情報を追加
 
 ### v1.2.0、2016年4月23日

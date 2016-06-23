@@ -12,7 +12,7 @@ Many programs and websites out there require three actions (drag on the password
 This program is coded in Python with tkinter and is distributed in .exe format through [py2exe](http://www.py2exe.org/), and in Mac .app format through [py2app](https://pythonhosted.org/py2app/).
 
 ## Installation
-It is currently available for Windows and Mac at [Releases](https://github.com/ShunSakurai/password_generator/releases). An iPhone version is also available as a [Pythonista](http://omz-software.com/pythonista/) code. You can run it by using the URL scheme pythonista://password_iphone.py or add it to the home screen using [Pythonista Shortcut](http://omz-software.com/pythonista/shortcut/).
+It is currently available for Windows and Mac at [Releases](https://github.com/ShunSakurai/password_generator/releases). An iOS version is also available as a [Pythonista](http://omz-software.com/pythonista/) code. You can run it by using the URL scheme pythonista://password_iphone.py or add it to the home screen using [Pythonista Shortcut](http://omz-software.com/pythonista/shortcut/).
 
 If you have the Python environment installed, you can run the source code with `python(3) password_generator.py` or `import password_generator` on any OS.
 
@@ -24,7 +24,7 @@ Installer is now under development. In the meantime, please follow the steps bel
 - (Optional) Move the folder to C:\Program Files
 - (Optional) Create a shortcut of the .exe file and add it to your Desktop, to your tools folder, or to C:\ProgramData\Microsoft\Windows\Start Menu\Programs (this way you can run the program from Windows Start Menu)
 
-When you use an updated version, you only have to copy and overwrite the files and folders with newer dates.
+If you already have an old version installed, you only have to copy and overwrite the files and folders with newer dates.
 This program needs to be **kept in the folder** to work. It does not work by itself.
 
 ### Mac
@@ -36,6 +36,12 @@ If it does not run itself, please do the following:
 - Place the .app file somewhere you like. You can remove the enclosing folder
 - Right-click Password Generator.app, click "Show Package Contents" and create an alias of Password Generator.app/Contents/MacOS/Password Generator
 - Move the alias to the "Applications" folder
+
+### iOS
+- Purchase Pythonista first
+- Somehow copy and paste the code into your app
+- I designed the code to fit my iPhone 5 screen. I tried my best to make it as proportional as possible, but please modify the parameters to fit your size
+- Change the length and the number of the passwords manually
 
 ## Usage
 You can open the program by double-clicking Password Generator.exe / Password Generator or its alias.
@@ -58,6 +64,7 @@ No storing feature is provided or planned to be.
 ### Maybe later
 - Add an ability to edit characters used
 - Add keyboard shortcuts (e.g. 1 to 10)
+- (iOS) Add UI elements to set the length and the number of the passwords
 
 Please [let me know](https://app.asana.com/-/share?s=132674863519248-e1JyDAuWLW0WnFErIjTrbz57EAmE077JUvQ45Y5pF43-29199191293549) if you need any of the features as soon as possible.
 
@@ -67,6 +74,7 @@ Please [let me know](https://app.asana.com/-/share?s=132674863519248-e1JyDAuWLW0
 For detailed history, please go to [Releases](https://github.com/ShunSakurai/password_generator/releases).
 
 ### Newest version
+- Update information about the iOS version
 - Add contact information
 
 ### v1.2.0, April 23, 2016
