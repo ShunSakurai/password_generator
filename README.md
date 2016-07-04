@@ -17,14 +17,8 @@ It is currently available for Windows and Mac at [Releases](https://github.com/S
 If you have the Python environment installed, you can run the source code with `python(3) password_generator.py` or `import password_generator` on any OS.
 
 ### Windows
-Installer is now under development. In the meantime, please follow the steps below:
+All you have to do for installation and upgrading is to download and run the installer.
 
-- Download dist.zip and decompress it
-- Rename the folder to "Password" or to any name you like
-- (Optional) Move the folder to C:\Program Files
-- (Optional) Create a shortcut of the .exe file and add it to your Desktop, to your tools folder, or to C:\ProgramData\Microsoft\Windows\Start Menu\Programs (this way you can run the program from Windows Start Menu)
-
-If you already have an old version installed, you only have to copy and overwrite the files and folders with newer dates.
 This program needs to be **kept in the folder** to work. It does not work by itself.
 
 ### Mac
@@ -58,7 +52,6 @@ No storing feature is provided or planned to be.
 ### Working on
 - Make the code more [readable](http://www.amazon.com/dp/0596802293)
 - Add an ability to store the settings
-- Prepare the installer
 - Prepare the icon
 
 ### Maybe later
@@ -73,7 +66,8 @@ Please [let me know](https://app.asana.com/-/share?s=132674863519248-e1JyDAuWLW0
 "*" at the beginning means bug-fixing.
 For detailed history, please go to [Releases](https://github.com/ShunSakurai/password_generator/releases).
 
-### Newest version
+### v1.2.1, July 4, 2016
+- Create the installer
 - Update information about the iOS version
 - Add contact information
 

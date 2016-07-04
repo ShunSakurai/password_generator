@@ -2,6 +2,10 @@
 cd Dropbox/Codes/password
 py -3.4 setup_win.py py2exe
 
+rmdir /s windows
+move dist windows
+rmdir /s __pycache__
+
 Libraries used:
 import tkinter
 import random
@@ -15,7 +19,7 @@ setup(
         'author': 'Shun Sakurai',
         'dest_base': 'Password Generator',
         'script': 'password_generator.py',
-        'version': '1.2.0'
+        'version': '1.2.1'
     }],
     options={'py2exe': {
         'bundle_files': 2,
