@@ -1,6 +1,6 @@
 # coding: utf-8
 '''
-cd Dropbox/Codes/password
+cd Dropbox/Codes/password_generator
 py password_generator.py
 '''
 import tkinter

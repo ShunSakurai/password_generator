@@ -1,5 +1,5 @@
 '''
-cd Dropbox/Codes/password
+cd Dropbox/Codes/password_generator
 py -3.4 setup_win.py py2exe
 
 rmdir /s windows
