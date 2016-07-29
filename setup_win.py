@@ -2,15 +2,19 @@
 cd Dropbox/Codes/password_generator
 py -3.4 setup_win.py py2exe
 
-rmdir /s windows
-move dist windows
-rmdir /s __pycache__
-
 Libraries used:
 import tkinter
 import random
 from re import search
 '''
+import os
+import shutil
+
+if os.path.exists('dist'):
+    shutil.rmtree('dist')
+if os.path.exists('windows'):
+    shutil.rmtree('windows')
+
 from distutils.core import setup
 import py2exe
 
@@ -27,3 +31,7 @@ setup(
         'excludes':['_bz2', '_frozen_importlib', '_hashlib', '_lzma', '_ssl', 'argparse', 'calendar', 'datetime', 'difflib', 'doctest', 'inspect', 'locale', 'optparse', 'pdb', 'pickle', 'pydoc', 'pyexpat', 'pyreadline', 'zipfile'],
     }}
 )
+
+os.rename('dist', 'windows')
+if os.path.exists('__pycache__'):
+    shutil.rmtree('__pycache__')

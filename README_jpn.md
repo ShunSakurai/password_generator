@@ -62,9 +62,11 @@ Python環境をインストールしている場合、`python(3) password_genera
 すぐに使用したい機能がある場合は[ご連絡ください](https://app.asana.com/-/share?s=132674863519248-e1JyDAuWLW0WnFErIjTrbz57EAmE077JUvQ45Y5pF43-29199191293549)。
 
 ## 履歴
-
 文頭の「*」は、バグ修正を示します。
 履歴の詳細は、[Releases(リリース)](https://github.com/ShunSakurai/password_generator/releases)でご覧ください。
+
+### 最新版
+- shutilモジュールを使用してセットアップを半自動化
 
 ### v1.2.1、2016年7月4日
 - インストーラーを作成

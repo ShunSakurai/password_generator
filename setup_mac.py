@@ -8,6 +8,14 @@ import tkinter
 import random
 from re import search
 """
+import os
+import shutil
+
+if os.path.exists('dist'):
+    shutil.rmtree('dist')
+if os.path.exists('mac'):
+    shutil.rmtree('mac')
+
 from setuptools import setup
 
 setup(
@@ -20,3 +28,7 @@ setup(
     setup_requires=['py2app'],
     version='1.2.0',
 )
+
+os.rename('dist', 'mac')
+if os.path.exists('__pycache__'):
+    shutil.rmtree('__pycache__')

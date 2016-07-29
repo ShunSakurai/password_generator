@@ -62,9 +62,11 @@ No storing feature is provided or planned to be.
 Please [let me know](https://app.asana.com/-/share?s=132674863519248-e1JyDAuWLW0WnFErIjTrbz57EAmE077JUvQ45Y5pF43-29199191293549) if you need any of the features as soon as possible.
 
 ## History
-
 "*" at the beginning means bug-fixing.
 For detailed history, please go to [Releases](https://github.com/ShunSakurai/password_generator/releases).
+
+### Newest version
+- Semiautomate the set-up process with shutil module
 
 ### v1.2.1, July 4, 2016
 - Create the installer
