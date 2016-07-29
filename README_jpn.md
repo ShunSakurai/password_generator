@@ -17,7 +17,7 @@
 Python環境をインストールしている場合、`python(3) password_generator.py`または`import password_generator`でソースコードをMacなど任意のOSで実行できます。
 
 ### Windows
-インストールやアップデートは、インストーラーをダウンロードして実行するだけで行えます。
+インストーラーをダウンロードして実行するだけで、インストールやアップデートを行えます。
 
 このプログラムが動作するには**フォルダーに含めたまま**にしておく必要があります。プログラム単体では動作しません。
 
@@ -36,6 +36,32 @@ Python環境をインストールしている場合、`python(3) password_genera
 - コードをアプリ内にコピーアンドペーストします
 - iPhone 5の画面に合うようにコードを書きました。なるべく比率でサイズが決まるようにしていますが、お使いのデバイスのサイズに応じて、必要な場合にパラメーターを変更してください
 - パスワードの長さと数は、手動で変更してください
+
+
+## ビルド
+
+### Windows
+Pythonコードを.exeファイルに変換し、インストーラーを作成するには、次の手順に従います。
+
+.exeファイルの要件と手順:
+
+- Python 3.4(私の知る限り、py2exeはPython 3.5に対応していません)
+- [py2exe](http://www.py2exe.org/)
+- Windowsマシン上で`py -3.4 setup.py py2exe`を実行します
+
+インストーラーの要件と手順:Requirements and procedures for the installer:
+
+- [Inno Setup](http://www.jrsoftware.org/isdl.php)
+- setup_installer.issをInno Setup Compilerで開き、Build(ビルド)>Compile(コンパイル)をクリックします。
+
+### Mac
+Pythonコードを.appファイルに変換するには、次の手順に従います。
+
+.appファイルの要件と手順:
+
+- Python 3.4以降
+- [py2exe](http://www.py2exe.org/)
+- Mac上で`py setup_mac.py py2app`を実行します
 
 ## 使用方法
 プログラムを開くには、Password Generator.exeまたはPassword Generatorをダブルクリックします。

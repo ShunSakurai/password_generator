@@ -37,6 +37,32 @@ If it does not run itself, please do the following:
 - I designed the code to fit my iPhone 5 screen. I tried my best to make it as proportional as possible, but please modify the parameters to fit your size
 - Change the length and the number of the passwords manually
 
+
+## Build
+
+### Windows
+To convert the Python code to an .exe file, and to create an installer, follow steps below.
+
+Requirements and procedures for the .exe file:
+
+- Python 3.4 (py2exe is not compatible with Python 3.5 as far as I know)
+- [py2exe](http://www.py2exe.org/)
+- Run `py -3.4 setup.py py2exe` on a Windows machine
+
+Requirements and procedures for the installer:
+
+- [Inno Setup](http://www.jrsoftware.org/isdl.php)
+- Open setup_installer.iss with Inno Setup Compiler and click Build > Compile
+
+### Mac
+To convert the Python code to an .app file, follow steps below.
+
+Requirements and procedures for the .app file:
+
+- Python 3.4 or later
+- [py2exe](http://www.py2exe.org/)
+- Run `py setup_mac.py py2app` on a Mac
+
 ## Usage
 You can open the program by double-clicking Password Generator.exe / Password Generator or its alias.
 
