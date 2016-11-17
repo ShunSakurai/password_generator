@@ -17,7 +17,7 @@ AppSupportURL=https://github.com/ShunSakurai/password_generator
 AppUpdatesURL=https://github.com/ShunSakurai/password_generator
 DefaultDirName={pf}\Password Generator
 DefaultGroupName=Password Generator
-;InfoAfterFile=C:\Users\sakuraishun\Dropbox\Codes\password_generator\README.md
+;InfoAfterFile=README.md
 OutputBaseFilename=password_generator_installer_{#ProgramVersion}
 Compression=lzma
 SolidCompression=yes
@@ -30,12 +30,12 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "C:\Users\sakuraishun\Dropbox\Codes\password_generator\windows\Password Generator.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\sakuraishun\Dropbox\Codes\password_generator\windows\library.zip"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\sakuraishun\Dropbox\Codes\password_generator\windows\python34.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\sakuraishun\Dropbox\Codes\password_generator\windows\tcl86t.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\sakuraishun\Dropbox\Codes\password_generator\windows\tk86t.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\sakuraishun\Dropbox\Codes\password_generator\windows\tcl\*"; DestDir: "{app}\tcl"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "windows\Password Generator.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "windows\library.zip"; DestDir: "{app}"; Flags: ignoreversion
+Source: "windows\python34.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "windows\tcl86t.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "windows\tk86t.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "windows\tcl\*"; DestDir: "{app}\tcl"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
