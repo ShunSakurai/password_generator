@@ -12,7 +12,7 @@
 このツールは、Pythonとtkinterを使用してコーディングし、[py2exe](http://www.py2exe.org/)を使用して.exe形式で配布、[py2app](https://pythonhosted.org/py2app/)を使用してMacの.app形式で配布するものです。
 
 ## インストール
-現在、WindowsとMacに対応しています。プログラムファイルは[Releases(リリース)](https://github.com/ShunSakurai/password_generator/releases)で入手できます。iOS版も、[Pythonista](http://omz-software.com/pythonista/)のコードとして入手できます。URLスキームのpythonista://password_iphone.pyを使用して実行したり、[Pythonista Shortcut](http://omz-software.com/pythonista/shortcut/)を使用してホーム画面に追加することができます。
+現在、WindowsとMacに対応しています。プログラムファイルは[Releases(リリース)](https://github.com/ShunSakurai/password_generator/releases)で入手できます。iOS版も、[Pythonista](http://omz-software.com/pythonista/)のコードとして入手できます。URLスキームのpythonista://password_iphone.pyを使用して実行したり、[Pythonista Shortcut](http://omz-software.com/pythonista/shortcut/)を使用してホーム画面に追加することができます。最新情報: 最近、サーバーが止まってしまっています。以下の**iOS**セクションの手順に従ってください。
 
 Python環境をインストールしている場合、`python(3) password_generator.py`または`import password_generator`でソースコードをMacなど任意のOSで実行できます。
 
@@ -34,9 +34,8 @@ Python環境をインストールしている場合、`python(3) password_genera
 ### iOS
 - まず、Pythonistaを購入してください
 - コードをアプリ内にコピーアンドペーストします
-- iPhone 5の画面に合うようにコードを書きました。なるべく比率でサイズが決まるようにしていますが、お使いのデバイスのサイズに応じて、必要な場合にパラメーターを変更してください
+- iPhone 5/SEの画面に合うようにコードを書きました。なるべく比率でサイズが決まるようにしていますが、お使いのデバイスのサイズに応じて、必要な場合にパラメーターを変更してください
 - パスワードの長さと数は、手動で変更してください
-
 
 ## ビルド
 
@@ -78,12 +77,14 @@ Pythonコードを.appファイルに変換するには、次の手順に従い�
 ### 開発中の機能
 - コードの[リーダブル](http://www.amazon.co.jp/dp/4873115655)化
 - 設定を保存する機能
-- アイコンを用意
+- アイコンを作成
 
 ### 棚上げ中の機能
 - 使用する文字を編集する機能
 - キーボードショートカットを追加(例: 1から10)
 - (iOS)パスワードの長さと数を設定するUI要素を追加
+- 文字を追加するための入力フィールドを追加
+- アルファベットの大文字と小文字を区別
 
 すぐに使用したい機能がある場合は[ご連絡ください](https://app.asana.com/-/share?s=132674863519248-e1JyDAuWLW0WnFErIjTrbz57EAmE077JUvQ45Y5pF43-29199191293549)。
 

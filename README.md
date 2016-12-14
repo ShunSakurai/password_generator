@@ -76,13 +76,15 @@ No storing feature is provided or planned to be.
 ## Features to come
 ### Working on
 - Make the code more [readable](http://www.amazon.com/dp/0596802293)
-- Add an ability to store the settings
-- Prepare the icon
+- Add an ability to store settings
+- Create the icon
 
 ### Maybe later
 - Add an ability to edit characters used
 - Add keyboard shortcuts (e.g. 1 to 10)
 - (iOS) Add UI elements to set the length and the number of the passwords
+- Add an input field to specify additional characters
+- Make alphabets case sensitive
 
 Please [let me know](https://app.asana.com/-/share?s=132674863519248-e1JyDAuWLW0WnFErIjTrbz57EAmE077JUvQ45Y5pF43-29199191293549) if you need any of the features as soon as possible.
 
