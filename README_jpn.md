@@ -37,6 +37,11 @@ Python環境をインストールしている場合、`python(3) password_genera
 - iPhone 5/SEの画面に合うようにコードを書きました。なるべく比率でサイズが決まるようにしていますが、お使いのデバイスのサイズに応じて、必要な場合にパラメーターを変更してください
 - パスワードの長さと数は、手動で変更してください
 
+Safariで次のリンクを開き、「ホーム画面に追加」を選択することにより、ホーム画面にショートカットを作成することができます。
+```
+data:text/html;charset=UTF-8,<title>Password</title><meta name="apple-mobile-web-app-capable" content="yes"><link rel="apple-touch-icon" href="https://raw.github.com/wiki/ShunSakurai/password_generator/home_icon.png"><script>navigator.standalone?location="pythonista://password_iphone.py":alert("Add to home screen.")</script>
+```
+
 ## ビルド
 
 ### Windows
@@ -86,41 +91,15 @@ Pythonコードを.appファイルに変換するには、次の手順に従い�
 - 文字を追加するための入力フィールドを追加
 - アルファベットの大文字と小文字を区別
 
-すぐに使用したい機能がある場合は[ご連絡ください](https://app.asana.com/-/share?s=132674863519248-e1JyDAuWLW0WnFErIjTrbz57EAmE077JUvQ45Y5pF43-29199191293549)。
+すぐに使用したい機能がある場合は、[Github issues](https://github.com/ShunSakurai/password_generator/issues)または[Asana](https://app.asana.com/0/264055467962183/list)からご連絡ください。
 
 ## 履歴
-文頭の「*」は、バグ修正を示します。
 履歴の詳細は、[Releases(リリース)](https://github.com/ShunSakurai/password_generator/releases)でご覧ください。
 
-### 最新版
-- shutilモジュールを使用してセットアップを半自動化
-
-### v1.2.1、2016年7月4日
-- インストーラーを作成
-- iOS版についての情報を更新
-- 連絡先情報を追加
-
-### v1.2.0、2016年4月23日
-- 更新時に乱数の種を初期化
-- distフォルダーと.appファイルのサイズを縮小
-
-### v1.1.3、2016年4月13日
-- * パスワードが必要なときに必ずコピーされるようにインデントを修正
-
-### v1.1.2、2016年4月8日
-- Windows版でボタンの線幅を縮小
-- * Windowsでボタンが再度有効にならない問題を解決
-
-### v1.1.0、2016年3月31日
-- バイナリファイルを配布
-- README_jpn.mdを作成
-
-### v1.0.0、2016年3月28日
-- GitHubに追加
-- README.mdを作成
+文頭の「*」は、バグ修正を示します。
 
 ## 貢献
-これは個人的なプロジェクトにすぎませんが、どんな[ご意見](https://app.asana.com/-/share?s=132674863519248-e1JyDAuWLW0WnFErIjTrbz57EAmE077JUvQ45Y5pF43-29199191293549)や貢献でもいただけると幸いです。
+これは個人的なプロジェクトにすぎませんが、[Github issues](https://github.com/ShunSakurai/password_generator/issues)または[Asana](https://app.asana.com/0/264055467962183/list)から、どんなご意見や貢献でもいただけると幸いです。
 
 ## 使用権限
 このツールは無料でお使いいただけます。個人利用のみに限定します。このプログラムの使用によって生じるいかなる損害についても責任は持ちません。
@@ -128,7 +107,7 @@ Pythonコードを.appファイルに変換するには、次の手順に従い�
 Pythonのrandomモジュールの擬似乱数生成器をセキュリティ目的に使用してはいけませんという注意書きがあることにご注意ください。
 https://docs.python.org/3/library/random.html#module-random
 
-© 2016 Shun Sakurai
+© 2016-2017 Shun Sakurai
 
 ## 基本的な考え方
 - 次の文字を含む文字列を用意します

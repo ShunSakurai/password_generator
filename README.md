@@ -37,6 +37,11 @@ If it does not run itself, please do the following:
 - I designed the code to fit my iPhone 5/SE screen. I tried my best to make it as proportional as possible, but please modify the parameters to fit your size
 - Change the length and the number of the passwords manually
 
+You can create a home screen shortcut by opening the following link in Safari, tapping share icon, and choosing to "Add to Home Screen".
+```
+data:text/html;charset=UTF-8,<title>Password</title><meta name="apple-mobile-web-app-capable" content="yes"><link rel="apple-touch-icon" href="https://raw.github.com/wiki/ShunSakurai/password_generator/home_icon.png"><script>navigator.standalone?location="pythonista://password_iphone.py":alert("Add to home screen.")</script>
+```
+
 ## Build
 
 ### Windows
@@ -86,41 +91,15 @@ No storing feature is provided or planned to be.
 - Add an input field to specify additional characters
 - Make alphabets case sensitive
 
-Please [let me know](https://app.asana.com/-/share?s=132674863519248-e1JyDAuWLW0WnFErIjTrbz57EAmE077JUvQ45Y5pF43-29199191293549) if you need any of the features as soon as possible.
+Please let me know from [Github issues](https://github.com/ShunSakurai/password_generator/issues) or [Asana](https://app.asana.com/0/264055467962183/list) if you need any of the features as soon as possible.
 
 ## History
-"*" at the beginning means bug-fixing.
 For detailed history, please go to [Releases](https://github.com/ShunSakurai/password_generator/releases).
 
-### Newest version
-- Semiautomate the set-up process with shutil module
-
-### v1.2.1, July 4, 2016
-- Create the installer
-- Update information about the iOS version
-- Add contact information
-
-### v1.2.0, April 23, 2016
-- Reseed when refreshing
-- Reduce the size of the dist folder and the .app file
-
-### v1.1.3, April 13, 2016
-- * Correct indent so that password is copied every time when necessary
-
-### v1.1.2, April 8, 2016
-- Reduce the button border width for the Windows version
-- * Resolve an issue where button is not re-enabled on Windows
-
-### v1.1.0, March 31, 2016
-- Distribute the binaries
-- Create README_jpn.md
-
-### v1.0.0, March 28, 2016
-- Add to GitHub
-- Create README.md
+"*" at the beginning means bug-fixing.
 
 ## Contribution
-This is just a personal project and I do not really know what kind of contribution I may get. Any [feedback](https://app.asana.com/-/share?s=132674863519248-e1JyDAuWLW0WnFErIjTrbz57EAmE077JUvQ45Y5pF43-29199191293549) and contribution is welcome!
+This is just a personal project and I do not really know what kind of contribution I may get. Any feedback and contribution from [Github issues](https://github.com/ShunSakurai/password_generator/issues) or [Asana](https://app.asana.com/0/264055467962183/list) is welcome!
 
 ## License
 You can use it for free. Personal use only. I do not take any responsibility for any damage caused by using this program.
@@ -128,7 +107,7 @@ You can use it for free. Personal use only. I do not take any responsibility for
 Please note that it is stated that the pseudo-random generators of Python's random module should not be used for security purposes.
 https://docs.python.org/3/library/random.html#module-random
 
-© 2016 Shun Sakurai
+© 2016-2017 Shun Sakurai
 
 ## Basic idea
 - Prepare a string containing the following characters
