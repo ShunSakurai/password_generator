@@ -1,4 +1,4 @@
-﻿# password_generator
+﻿# Password Generator
 簡素なパスワード生成ツール
 
 [英語のREADME](https://github.com/ShunSakurai/password_generator/blob/master/README.md)もあります。
@@ -90,7 +90,7 @@ Pythonコードを.appファイルに変換するには、次の手順に従い�
 - キーボードショートカットを追加(例: 1から10)
 - アルファベットの大文字と小文字を区別
 
-すぐに使用したい機能がある場合は、[Github issues](https://github.com/ShunSakurai/password_generator/issues)または[Asana](https://app.asana.com/0/264055467962183/list)からご連絡ください。
+すぐに使用したい機能がある場合は、[Github Issues](https://github.com/ShunSakurai/password_generator/issues)または[Asana](https://app.asana.com/0/264055467962183/list)からご連絡ください。
 
 ## 履歴
 履歴の詳細は、[Releases(リリース)](https://github.com/ShunSakurai/password_generator/releases)でご覧ください。
@@ -98,7 +98,7 @@ Pythonコードを.appファイルに変換するには、次の手順に従い�
 文頭の「*」は、バグ修正を示します。
 
 ## 貢献
-これは個人的なプロジェクトにすぎませんが、[Github issues](https://github.com/ShunSakurai/password_generator/issues)または[Asana](https://app.asana.com/0/264055467962183/list)から、どんなご意見や貢献でもいただけると幸いです。
+これは個人的なプロジェクトにすぎませんが、[Github Issues](https://github.com/ShunSakurai/password_generator/issues)または[Asana](https://app.asana.com/0/264055467962183/list)から、どんなご意見や貢献でもいただけると幸いです。
 
 ## 使用権限
 このツールは無料でお使いいただけます。個人利用のみに限定します。このプログラムの使用によって生じるいかなる損害についても責任は持ちません。

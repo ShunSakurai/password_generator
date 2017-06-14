@@ -1,4 +1,4 @@
-﻿# password_generator
+﻿# Password Generator
 Simple password generators
 
 [Japanese README](https://github.com/ShunSakurai/password_generator/blob/master/README_jpn.md) is also available.
@@ -90,7 +90,7 @@ No storing feature is provided or planned to be.
 - Add keyboard shortcuts (e.g. 1 to 10)
 - Make alphabets case sensitive
 
-Please let me know from [Github issues](https://github.com/ShunSakurai/password_generator/issues) or [Asana](https://app.asana.com/0/264055467962183/list) if you need any of the features as soon as possible.
+Please let me know from [Github Issues](https://github.com/ShunSakurai/password_generator/issues) or [Asana](https://app.asana.com/0/264055467962183/list) if you need any of the features as soon as possible.
 
 ## History
 For detailed history, please go to [Releases](https://github.com/ShunSakurai/password_generator/releases).
@@ -98,7 +98,7 @@ For detailed history, please go to [Releases](https://github.com/ShunSakurai/pas
 "*" at the beginning means bug-fixing.
 
 ## Contribution
-This is just a personal project and I do not really know what kind of contribution I may get. Any feedback and contribution from [Github issues](https://github.com/ShunSakurai/password_generator/issues) or [Asana](https://app.asana.com/0/264055467962183/list) is welcome!
+This is just a personal project and I do not really know what kind of contribution I may get. Any feedback and contribution from [Github Issues](https://github.com/ShunSakurai/password_generator/issues) or [Asana](https://app.asana.com/0/264055467962183/list) is welcome!
 
 ## License
 You can use it for free. Personal use only. I do not take any responsibility for any damage caused by using this program.
