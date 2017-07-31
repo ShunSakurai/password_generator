@@ -1,6 +1,8 @@
 '''
+cd /d z:
 cd Dropbox/Codes/password_generator
 py -3.4 setup_win.py py2exe
+"C:\Program Files (x86)\Inno Setup 5\iscc" setup_installer.iss
 
 Libraries used:
 import tkinter
@@ -21,8 +23,9 @@ import py2exe
 dict_console = {
     'author': 'Shun Sakurai',
     'dest_base': 'Password Generator',
+    'icon_resources': [(1, './icons/password_icon.ico')],
     'script': 'password_generator.py',
-    'version': '1.2.1'
+    'version': '1.2.2'
 }
 dict_options = {
     'bundle_files': 2,
