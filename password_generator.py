@@ -130,6 +130,7 @@ def refresh_tapped(self):
     random.seed()
     set_buttons()
 
+
 button_refresh = tkinter.Button(subview_right, text='refresh')
 button_refresh['state'] = 'normal'
 button_refresh.bind('<ButtonRelease-1>', refresh_tapped)

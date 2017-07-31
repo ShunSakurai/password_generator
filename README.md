@@ -9,7 +9,7 @@ Simple password generators
 The purpose of developing this tool is to create a **simple** password generator that lets the user copy the generated password to the clipboard with a single click.
 Many programs and websites out there require three actions (drag on the password, right-click, and copy) to do this.
 
-This program is coded in Python with tkinter and is distributed in .exe format through [py2exe](http://www.py2exe.org/), and in Mac .app format through [py2app](https://pythonhosted.org/py2app/).
+This program is coded in Python with tkinter and is distributed in .exe format through [PyInstaller](http://www.pyinstaller.org/) and [Verpatch](https://www.codeproject.com/Articles/37133/Simple-Version-Resource-Tool-for-Windows), and in Mac .app format through [py2app](https://pythonhosted.org/py2app/).
 
 ## Installation
 It is currently available for Windows and Mac at [Releases](https://github.com/ShunSakurai/password_generator/releases). An iOS version is also available as a [Pythonista](http://omz-software.com/pythonista/) code. You can run it by using the URL scheme pythonista://password_iphone.py or add it to the home screen using [Pythonista Shortcut](http://omz-software.com/pythonista/shortcut/). Update: the server doesn't seem to be working lately. Please see the instruction in the **iOS** section below.
@@ -45,18 +45,17 @@ data:text/html;charset=UTF-8,<title>Password</title><meta name="apple-mobile-web
 ## Build
 
 ### Windows
-To convert the Python code to an .exe file, and to create an installer, follow steps below.
+To convert the Python code to an .exe file, and to create an installer, follow the steps below.
 
-Requirements and procedures for the .exe file:
-
-- Python 3.4 (py2exe is not compatible with Python 3.5 as far as I know)
-- [py2exe](http://www.py2exe.org/)
-- Run `py -3.4 setup.py py2exe` on a Windows machine
-
-Requirements and procedures for the installer:
-
+### Requirements
+- [Python 3](https://www.python.org/downloads/)
+- [PyInstaller](http://www.pyinstaller.org/)
+- [Verpatch](https://www.codeproject.com/Articles/37133/Simple-Version-Resource-Tool-for-Windows), add it to PATH
 - [Inno Setup](http://www.jrsoftware.org/isdl.php)
-- Open setup_installer.iss with Inno Setup Compiler and click Build > Compile
+
+### Procedures
+- Run `py -B setup_win.py` on a Windows machine. `-B` is optional
+- You may have to set alias to make py = python3
 
 ### Mac
 To convert the Python code to an .app file, follow steps below.
@@ -82,7 +81,6 @@ No storing feature is provided or planned to be.
 ### Working on
 - Make the code more [readable](http://www.amazon.com/dp/0596802293)
 - Add an ability to store settings
-- Create the icon
 
 ### Maybe later
 - Add an ability to edit characters used

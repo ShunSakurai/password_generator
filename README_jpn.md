@@ -9,7 +9,7 @@
 1クリックでクリップボードにパスワードをコピーできるような、**シンプルな**パスワード生成ツールを作りたいと思い、このツールを開発しました。
 既存のプログラムやウェブサイトの多くは、パスワードをコピーするために(パスワードをドラッグして選択、右クリック、コピーの)3アクションが必要です。
 
-このツールは、Pythonとtkinterを使用してコーディングし、[py2exe](http://www.py2exe.org/)を使用して.exe形式で配布、[py2app](https://pythonhosted.org/py2app/)を使用してMacの.app形式で配布するものです。
+このツールは、Pythonとtkinterを使用してコーディングし、[PyInstaller](http://www.pyinstaller.org/)と[Verpatch](https://www.codeproject.com/Articles/37133/Simple-Version-Resource-Tool-for-Windows)を使用して.exe形式で配布、[py2app](https://pythonhosted.org/py2app/)を使用してMacの.app形式で配布するものです。
 
 ## インストール
 現在、WindowsとMacに対応しています。プログラムファイルは[Releases(リリース)](https://github.com/ShunSakurai/password_generator/releases)で入手できます。iOS版も、[Pythonista](http://omz-software.com/pythonista/)のコードとして入手できます。URLスキームのpythonista://password_iphone.pyを使用して実行したり、[Pythonista Shortcut](http://omz-software.com/pythonista/shortcut/)を使用してホーム画面に追加することができます。最新情報: 最近、サーバーが止まってしまっています。以下の**iOS**セクションの手順に従ってください。
@@ -47,16 +47,15 @@ data:text/html;charset=UTF-8,<title>Password</title><meta name="apple-mobile-web
 ### Windows
 Pythonコードを.exeファイルに変換し、インストーラーを作成するには、次の手順に従います。
 
-.exeファイルの要件と手順:
-
-- Python 3.4(私の知る限り、py2exeはPython 3.5に対応していません)
-- [py2exe](http://www.py2exe.org/)
-- Windowsマシン上で`py -3.4 setup.py py2exe`を実行します
-
-インストーラーの要件と手順:Requirements and procedures for the installer:
-
+### 要件
+- [Python 3](https://www.python.org/downloads/)
+- [PyInstaller](http://www.pyinstaller.org/)
+- [Verpatch](https://www.codeproject.com/Articles/37133/Simple-Version-Resource-Tool-for-Windows)、パスを通してください
 - [Inno Setup](http://www.jrsoftware.org/isdl.php)
-- setup_installer.issをInno Setup Compilerで開き、Build(ビルド)>Compile(コンパイル)をクリックします。
+
+### 手順
+- Windows環境で、`py -B setup_win.py`を実行します。`-B`はオプションです
+- py = python3となるように、エイリアスを設定する必要があるかもしれません
 
 ### Mac
 Pythonコードを.appファイルに変換するには、次の手順に従います。
@@ -82,7 +81,6 @@ Pythonコードを.appファイルに変換するには、次の手順に従い�
 ### 開発中の機能
 - コードの[リーダブル](http://www.amazon.co.jp/dp/4873115655)化
 - 設定を保存する機能
-- アイコンを作成
 
 ### 棚上げ中の機能
 - 使用する文字を編集する機能
