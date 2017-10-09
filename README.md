@@ -12,7 +12,7 @@ Many programs and websites out there require three actions (drag on the password
 This program is coded in Python with tkinter and is distributed in .exe format through [PyInstaller](http://www.pyinstaller.org/) and [Verpatch](https://www.codeproject.com/Articles/37133/Simple-Version-Resource-Tool-for-Windows), and in Mac .app format through [py2app](https://pythonhosted.org/py2app/).
 
 ## Installation
-It is currently available for Windows and Mac at [Releases](https://github.com/ShunSakurai/password_generator/releases). An iOS version is also available as a [Pythonista](http://omz-software.com/pythonista/) code. You can run it by using the URL scheme pythonista://password_iphone.py or add it to the home screen using [Pythonista Shortcut](http://omz-software.com/pythonista/shortcut/). Update: the server doesn't seem to be working lately. Please see the instruction in the **iOS** section below.
+It is currently available for Windows and Mac at [Releases](https://github.com/ShunSakurai/password_generator/releases). An iOS version is also available as a [Pythonista](http://omz-software.com/pythonista/) code. You can run it by using the URL scheme pythonista://password_iphone.py or add it to the home screen.
 
 If you have the Python environment installed, you can run the source code with `python(3) password_generator.py` or `import password_generator` on any OS.
 
@@ -37,7 +37,7 @@ If it does not run itself, please do the following:
 - I designed the code to fit my iPhone 5/SE screen. I tried my best to make it as proportional as possible, but please modify the parameters to fit your size
 - Change the length and the number of the passwords manually
 
-You can create a home screen shortcut by opening the following link in Safari, tapping share icon, and choosing to "Add to Home Screen".
+You can create a home screen shortcut in Pythonista by choosing [Wrench] icon > [Home Screen], or in Safari opening the following link, tapping [Share] icon, and choosing [Add to Home Screen].
 ```
 data:text/html;charset=UTF-8,<title>Password</title><meta name="apple-mobile-web-app-capable" content="yes"><link rel="apple-touch-icon" href="https://raw.github.com/wiki/ShunSakurai/password_generator/home_icon.png"><script>navigator.standalone?location="pythonista://password_iphone.py":alert("Add to home screen.")</script>
 ```

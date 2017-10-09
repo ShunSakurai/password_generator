@@ -12,7 +12,7 @@
 このツールは、Pythonとtkinterを使用してコーディングし、[PyInstaller](http://www.pyinstaller.org/)と[Verpatch](https://www.codeproject.com/Articles/37133/Simple-Version-Resource-Tool-for-Windows)を使用して.exe形式で配布、[py2app](https://pythonhosted.org/py2app/)を使用してMacの.app形式で配布するものです。
 
 ## インストール
-現在、WindowsとMacに対応しています。プログラムファイルは[Releases(リリース)](https://github.com/ShunSakurai/password_generator/releases)で入手できます。iOS版も、[Pythonista](http://omz-software.com/pythonista/)のコードとして入手できます。URLスキームのpythonista://password_iphone.pyを使用して実行したり、[Pythonista Shortcut](http://omz-software.com/pythonista/shortcut/)を使用してホーム画面に追加することができます。最新情報: 最近、サーバーが止まってしまっています。以下の**iOS**セクションの手順に従ってください。
+現在、WindowsとMacに対応しています。プログラムファイルは[Releases(リリース)](https://github.com/ShunSakurai/password_generator/releases)で入手できます。iOS版も、[Pythonista](http://omz-software.com/pythonista/)のコードとして入手できます。URLスキームのpythonista://password_iphone.pyを使用して実行したり、ホーム画面に追加することができます。
 
 Python環境をインストールしている場合、`python(3) password_generator.py`または`import password_generator`でソースコードをMacなど任意のOSで実行できます。
 
@@ -37,7 +37,7 @@ Python環境をインストールしている場合、`python(3) password_genera
 - iPhone 5/SEの画面に合うようにコードを書きました。なるべく比率でサイズが決まるようにしていますが、お使いのデバイスのサイズに応じて、必要な場合にパラメーターを変更してください
 - パスワードの長さと数は、手動で変更してください
 
-Safariで次のリンクを開き、「ホーム画面に追加」を選択することにより、ホーム画面にショートカットを作成することができます。
+Pythonistaで「レンチ」アイコン>[Home Screen]を選択するか、Safariで次のリンクを開いて「ホーム画面に追加」を選択することにより、ホーム画面にショートカットを作成することができます。
 ```
 data:text/html;charset=UTF-8,<title>Password</title><meta name="apple-mobile-web-app-capable" content="yes"><link rel="apple-touch-icon" href="https://raw.github.com/wiki/ShunSakurai/password_generator/home_icon.png"><script>navigator.standalone?location="pythonista://password_iphone.py":alert("Add to home screen.")</script>
 ```
