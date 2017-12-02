@@ -13,8 +13,8 @@ subview_up = tkinter.Frame(view)
 subview_left = tkinter.Frame(view)
 subview_right = tkinter.Frame(view)
 subview_up.grid(row=0, column=0, columnspan=2)
-subview_left.grid(row=1, column=1)
-subview_right.grid(row=1, column=0, sticky='n')
+subview_left.grid(row=1, column=0, sticky='n')
+subview_right.grid(row=1, column=1)
 
 tuple_cc_sym = ((33, 48), (58, 65), (91, 97), (123, 127))
 tuple_cc_alp = ((65, 91), (97, 123))
@@ -47,25 +47,25 @@ var_str_num.set(str_num)
 ent_sym = tkinter.Entry(subview_up, width=30, textvariable=var_str_sym)
 ent_alp = tkinter.Entry(subview_up, width=30, textvariable=var_str_alp)
 ent_num = tkinter.Entry(subview_up, width=30, textvariable=var_str_num)
-ent = (ent_sym, ent_alp, ent_num)
+entries = (ent_sym, ent_alp, ent_num)
 
-for e in ent:
-    e.pack()
+for ent in entries:
+    ent.pack()
 
 
-var_sym = tkinter.IntVar()
-var_alp = tkinter.IntVar()
-var_num = tkinter.IntVar()
-var = (var_sym, var_alp, var_num)
+var_bool_sym = tkinter.BooleanVar()
+var_bool_alp = tkinter.BooleanVar()
+var_bool_num = tkinter.BooleanVar()
+variables_bool = (var_bool_sym, var_bool_alp, var_bool_num)
 
 lname = ('sym', 'alp', 'num')
-sw_sym = tkinter.Checkbutton(subview_right, text=lname[0])
-sw_alp = tkinter.Checkbutton(subview_right, text=lname[1])
-sw_num = tkinter.Checkbutton(subview_right, text=lname[2])
-switch = (sw_sym, sw_alp, sw_num,)
+sw_sym = tkinter.Checkbutton(subview_left, text=lname[0])
+sw_alp = tkinter.Checkbutton(subview_left, text=lname[1])
+sw_num = tkinter.Checkbutton(subview_left, text=lname[2])
+switches = (sw_sym, sw_alp, sw_num,)
 
-for sw in switch:
-    sw['variable'] = var[switch.index(sw)]
+for sw in switches:
+    sw['variable'] = variables_bool[switches.index(sw)]
     sw.select()
     sw.pack()
 
@@ -74,13 +74,13 @@ var_length.set(12)
 var_choices = tkinter.IntVar()
 var_choices.set(10)
 
-l_length = tkinter.Label(subview_right, text='length')
+l_length = tkinter.Label(subview_left, text='length')
 l_length.pack()
-sc_length = tkinter.Scale(subview_right, variable=var_length, from_=20, to=1, length=60, sliderlength=10, width=20)
+sc_length = tkinter.Scale(subview_left, variable=var_length, from_=20, to=1, length=60, sliderlength=10, width=20)
 sc_length.pack()
-l_choices = tkinter.Label(subview_right, text='number')
+l_choices = tkinter.Label(subview_left, text='number')
 l_choices.pack()
-sc_choices = tkinter.Scale(subview_right, variable=var_choices, from_=20, to=1, length=60, sliderlength=10, width=20)
+sc_choices = tkinter.Scale(subview_left, variable=var_choices, from_=20, to=1, length=60, sliderlength=10, width=20)
 sc_choices.pack()
 
 
@@ -95,13 +95,13 @@ def set_s():
     length = sc_length.get()
     dict_available_char = get_available_char()
     s = []
-    if var_sym.get() == 1:
+    if var_bool_sym.get() is True:
         s += dict_available_char['sym']
 
-    if var_alp.get() == 1:
+    if var_bool_alp.get() is True:
         s += dict_available_char['alp']
 
-    if var_num.get() == 1:
+    if var_bool_num.get() is True:
         s += dict_available_char['num']
 
     if length > len(s):
@@ -115,7 +115,7 @@ def set_pw(s):
     length = sc_length.get()
     pw = ['']
     for k in range(choices):
-        if var_num.get() == 1 and length != 1:
+        if var_bool_num.get() is True and length != 1:
             while search('[0-9]', pw[k]) is None:
                 pw[k] = ''.join(random.sample(s, length))
             pw.append('')
@@ -127,7 +127,7 @@ def set_pw(s):
 
 
 def change_all_state(state):
-    for child in subview_left.winfo_children():
+    for child in subview_right.winfo_children():
         child['state'] = state
 
 
@@ -149,12 +149,12 @@ def button_tapped(self):
 
 
 def set_buttons():
-    for child in subview_left.winfo_children():
+    for child in subview_right.winfo_children():
         child.destroy()
     s = set_s()
     pw = set_pw(s)
     choices = sc_choices.get()
-    buttons = [tkinter.Button(subview_left, text='') for k in range(choices)]
+    buttons = [tkinter.Button(subview_right, text='') for k in range(choices)]
     for k in range(choices):
         buttons[k]['text'] = pw[k]
         buttons[k]['borderwidth'] = 1
@@ -163,7 +163,7 @@ def set_buttons():
     change_all_state('normal')
 
 
-for sw in switch:
+for sw in switches:
     sw['command'] = set_buttons
 
 set_buttons()
@@ -174,7 +174,7 @@ def refresh_tapped(self):
     set_buttons()
 
 
-button_refresh = tkinter.Button(subview_right, text='refresh')
+button_refresh = tkinter.Button(subview_left, text='refresh')
 button_refresh['state'] = 'normal'
 button_refresh.bind('<ButtonRelease-1>', refresh_tapped)
 button_refresh.pack()
