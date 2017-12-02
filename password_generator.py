@@ -9,10 +9,49 @@ from re import search
 
 view = tkinter.Frame()
 
+subview_up = tkinter.Frame(view)
 subview_left = tkinter.Frame(view)
 subview_right = tkinter.Frame(view)
+subview_up.grid(row=0, column=0, columnspan=2)
 subview_left.grid(row=1, column=1)
 subview_right.grid(row=1, column=0, sticky='n')
+
+tuple_cc_sym = ((33, 48), (58, 65), (91, 97), (123, 127))
+tuple_cc_alp = ((65, 91), (97, 123))
+tuple_cc_num = ((48, 58),)
+
+
+def mk_list_of_characters(tuple_cc):
+    ls = []
+    for tpl in tuple_cc:
+        ls += [chr(c) for c in range(tpl[0], tpl[1])]
+    return ls
+
+
+ls_init_sym = mk_list_of_characters(tuple_cc_sym)
+ls_init_alp = mk_list_of_characters(tuple_cc_alp)
+ls_init_num = mk_list_of_characters(tuple_cc_num)
+
+str_sym = ''.join(ls_init_sym)
+str_alp = ''.join(ls_init_alp)
+str_num = ''.join(ls_init_num)
+
+var_str_sym = tkinter.StringVar(subview_up)
+var_str_alp = tkinter.StringVar(subview_up)
+var_str_num = tkinter.StringVar(subview_up)
+
+var_str_sym.set(str_sym)
+var_str_alp.set(str_alp)
+var_str_num.set(str_num)
+
+ent_sym = tkinter.Entry(subview_up, width=30, textvariable=var_str_sym)
+ent_alp = tkinter.Entry(subview_up, width=30, textvariable=var_str_alp)
+ent_num = tkinter.Entry(subview_up, width=30, textvariable=var_str_num)
+ent = (ent_sym, ent_alp, ent_num)
+
+for e in ent:
+    e.pack()
+
 
 var_sym = tkinter.IntVar()
 var_alp = tkinter.IntVar()
@@ -45,21 +84,25 @@ sc_choices = tkinter.Scale(subview_right, variable=var_choices, from_=20, to=1, 
 sc_choices.pack()
 
 
+def get_available_char():
+    ls_sym = list(var_str_sym.get())
+    ls_alp = list(var_str_alp.get())
+    ls_num = list(var_str_num.get())
+    return {'sym': ls_sym, 'alp': ls_alp, 'num': ls_num}
+
+
 def set_s():
     length = sc_length.get()
+    dict_available_char = get_available_char()
     s = []
     if var_sym.get() == 1:
-        s += [chr(c) for c in range(33, 48)]
-        s += [chr(c) for c in range(58, 65)]
-        s += [chr(c) for c in range(91, 97)]
-        s += [chr(c) for c in range(123, 127)]
+        s += dict_available_char['sym']
 
     if var_alp.get() == 1:
-        s += [chr(c) for c in range(65, 91)]
-        s += [chr(c) for c in range(97, 123)]
+        s += dict_available_char['alp']
 
     if var_num.get() == 1:
-        s += [chr(c) for c in range(48, 58)]
+        s += dict_available_char['num']
 
     if length > len(s):
         s = s * (length // len(s) + 1)

@@ -81,12 +81,10 @@ No storing feature is provided or planned to be.
 ### Working on
 - Make the code more [readable](http://www.amazon.com/dp/0596802293)
 - Add an ability to store settings
+- Make alphabets case sensitive
 
 ### Maybe later
-- Add an ability to edit characters used
-- Add an input field to specify additional characters
 - Add keyboard shortcuts (e.g. 1 to 10)
-- Make alphabets case sensitive
 
 Please let me know from [Github Issues](https://github.com/ShunSakurai/password_generator/issues) or [Asana](https://app.asana.com/0/264055467962183/list) if you need any of the features as soon as possible.
 

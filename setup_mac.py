@@ -16,7 +16,7 @@ dict_console = {
     'dest_base': 'Password Generator',
     'icon_resources': [(1, './icons/password_icon.icns')],
     'script': 'password_generator.py',
-    'version': '1.2.3'
+    'version': '1.2.4'
 }
 dict_options = {
     'excludes': [
