@@ -81,7 +81,6 @@ No storing feature is provided or planned to be.
 ### Working on
 - Make the code more [readable](http://www.amazon.com/dp/0596802293)
 - Add an ability to store settings
-- Make alphabets case sensitive
 
 ### Maybe later
 - Add keyboard shortcuts (e.g. 1 to 10)

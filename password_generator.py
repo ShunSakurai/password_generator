@@ -17,7 +17,8 @@ subview_left.grid(row=1, column=0, sticky='n')
 subview_right.grid(row=1, column=1)
 
 tuple_cc_sym = ((33, 48), (58, 65), (91, 97), (123, 127))
-tuple_cc_alp = ((65, 91), (97, 123))
+tuple_cc_cap = ((65, 91),)
+tuple_cc_low = ((97, 123),)
 tuple_cc_num = ((48, 58),)
 
 
@@ -29,40 +30,47 @@ def mk_list_of_characters(tuple_cc):
 
 
 ls_init_sym = mk_list_of_characters(tuple_cc_sym)
-ls_init_alp = mk_list_of_characters(tuple_cc_alp)
+ls_init_cap = mk_list_of_characters(tuple_cc_cap)
+ls_init_low = mk_list_of_characters(tuple_cc_low)
 ls_init_num = mk_list_of_characters(tuple_cc_num)
 
 str_sym = ''.join(ls_init_sym)
-str_alp = ''.join(ls_init_alp)
+str_cap = ''.join(ls_init_cap)
+str_low = ''.join(ls_init_low)
 str_num = ''.join(ls_init_num)
 
 var_str_sym = tkinter.StringVar(subview_up)
-var_str_alp = tkinter.StringVar(subview_up)
+var_str_cap = tkinter.StringVar(subview_up)
+var_str_low = tkinter.StringVar(subview_up)
 var_str_num = tkinter.StringVar(subview_up)
 
 var_str_sym.set(str_sym)
-var_str_alp.set(str_alp)
+var_str_cap.set(str_cap)
+var_str_low.set(str_low)
 var_str_num.set(str_num)
 
 ent_sym = tkinter.Entry(subview_up, width=30, textvariable=var_str_sym)
-ent_alp = tkinter.Entry(subview_up, width=30, textvariable=var_str_alp)
+ent_cap = tkinter.Entry(subview_up, width=30, textvariable=var_str_cap)
+ent_low = tkinter.Entry(subview_up, width=30, textvariable=var_str_low)
 ent_num = tkinter.Entry(subview_up, width=30, textvariable=var_str_num)
-entries = (ent_sym, ent_alp, ent_num)
+entries = (ent_sym, ent_cap, ent_low, ent_num)
 
 for ent in entries:
     ent.pack()
 
 
 var_bool_sym = tkinter.BooleanVar()
-var_bool_alp = tkinter.BooleanVar()
+var_bool_cap = tkinter.BooleanVar()
+var_bool_low = tkinter.BooleanVar()
 var_bool_num = tkinter.BooleanVar()
-variables_bool = (var_bool_sym, var_bool_alp, var_bool_num)
+variables_bool = (var_bool_sym, var_bool_cap, var_bool_low, var_bool_num)
 
-lname = ('sym', 'alp', 'num')
+lname = ('sym', 'cap', 'low', 'num')
 sw_sym = tkinter.Checkbutton(subview_left, text=lname[0])
-sw_alp = tkinter.Checkbutton(subview_left, text=lname[1])
-sw_num = tkinter.Checkbutton(subview_left, text=lname[2])
-switches = (sw_sym, sw_alp, sw_num,)
+sw_cap = tkinter.Checkbutton(subview_left, text=lname[1])
+sw_low = tkinter.Checkbutton(subview_left, text=lname[2])
+sw_num = tkinter.Checkbutton(subview_left, text=lname[3])
+switches = (sw_sym, sw_cap, sw_low, sw_num,)
 
 for sw in switches:
     sw['variable'] = variables_bool[switches.index(sw)]
@@ -86,9 +94,10 @@ sc_choices.pack()
 
 def get_available_char():
     ls_sym = list(var_str_sym.get())
-    ls_alp = list(var_str_alp.get())
+    ls_cap = list(var_str_cap.get())
+    ls_low = list(var_str_low.get())
     ls_num = list(var_str_num.get())
-    return {'sym': ls_sym, 'alp': ls_alp, 'num': ls_num}
+    return {'sym': ls_sym, 'cap': ls_cap, 'low': ls_low, 'num': ls_num}
 
 
 def set_s():
@@ -98,8 +107,11 @@ def set_s():
     if var_bool_sym.get() is True:
         s += dict_available_char['sym']
 
-    if var_bool_alp.get() is True:
-        s += dict_available_char['alp']
+    if var_bool_cap.get() is True:
+        s += dict_available_char['cap']
+
+    if var_bool_low.get() is True:
+        s += dict_available_char['low']
 
     if var_bool_num.get() is True:
         s += dict_available_char['num']
