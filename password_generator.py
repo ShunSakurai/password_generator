@@ -101,42 +101,42 @@ sc_choices.pack()
 
 
 def get_available_char():
-    ls_sym = list(pattern_space.sub('', var_str_sym.get()))
-    ls_cap = list(pattern_space.sub('', var_str_cap.get()))
-    ls_low = list(pattern_space.sub('', var_str_low.get()))
-    ls_num = list(pattern_space.sub('', var_str_num.get()))
-    return {'sym': ls_sym, 'cap': ls_cap, 'low': ls_low, 'num': ls_num}
-
-
-def set_string_list():
-    length = sc_length.get()
-    dict_available_char = get_available_char()
-    string_list = []
+    list_string_list = []
     if var_bool_sym.get():
-        string_list += dict_available_char['sym']
-
+        list_string_list.append(list(pattern_space.sub('', var_str_sym.get())))
     if var_bool_cap.get():
-        string_list += dict_available_char['cap']
-
+        list_string_list.append(list(pattern_space.sub('', var_str_cap.get())))
     if var_bool_low.get():
-        string_list += dict_available_char['low']
-
+        list_string_list.append(list(pattern_space.sub('', var_str_low.get())))
     if var_bool_num.get():
-        string_list += dict_available_char['num']
-
-    if length > len(string_list):
-        string_list = string_list * (length // len(string_list) + 1)
-
-    return string_list
+        list_string_list.append(list(pattern_space.sub('', var_str_num.get())))
+    return list_string_list
 
 
-def set_pw(string_list):
+def set_pw():
     choices = sc_choices.get()
     length = sc_length.get()
-    pw_list = []
+
+    list_pw_string = []
     for k in range(choices):
-        pw_list.append(''.join(random.sample(string_list, length)))
-    return pw_list
+        list_string_list = get_available_char()
+        pw_list = []
+        for string_list in list_string_list:
+            random.shuffle(string_list)
+            pw_list.append(string_list.pop())
+        if len(pw_list) > length:
+            list_pw_string.append(''.join(random.sample((list(pw_list)), length)))
+            continue
+        elif len(pw_list) == length:
+            list_pw_string.append(''.join(pw_list))
+        else:
+            remaining_string = ''.join([''.join(ls) for ls in list_string_list])
+            if length > len(pw_list) + len(remaining_string):
+                remaining_string = remaining_string + ''.join([''.join(ls) for ls in get_available_char()]) * (length - len(pw_list) // len(remaining_string))
+            pw_list.append(''.join(random.sample(remaining_string, length - len(pw_list))))
+            random.shuffle(pw_list)
+            list_pw_string.append(''.join(pw_list))
+    return list_pw_string
 
 
 def change_all_state(state):
@@ -164,12 +164,11 @@ def button_tapped(self):
 def set_buttons():
     for child in subview_right.winfo_children():
         child.destroy()
-    string_list = set_string_list()
-    pw_list = set_pw(string_list)
+    list_pw_string = set_pw()
     choices = sc_choices.get()
     buttons = [tkinter.Button(subview_right, text='') for k in range(choices)]
     for k in range(choices):
-        buttons[k]['text'] = pw_list[k]
+        buttons[k]['text'] = list_pw_string[k]
         buttons[k]['borderwidth'] = 1
         buttons[k].bind('<ButtonRelease-1>', button_tapped)
         buttons[k].pack()

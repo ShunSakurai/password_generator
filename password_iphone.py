@@ -3,7 +3,6 @@
 import ui
 import clipboard
 import random
-from re import search
 
 view = ui.View()
 view.name = 'Password Generator'
@@ -11,24 +10,27 @@ view.background_color = 'white'
 view.flex = ''
 
 l_sym = ui.Label()
-l_alp = ui.Label()
+l_cap = ui.Label()
+l_low = ui.Label()
 l_num = ui.Label()
-labels = (l_sym, l_alp, l_num, )
-lnames = ('sym', 'alp', 'num')
+labels = (l_sym, l_cap, l_low, l_num, )
+lnames = ('sym', 'cap', 'low', 'num')
+
 for l in range(len(labels)):
     labels[l].text = lnames[l]
     labels[l].alignment = ui.ALIGN_CENTER
-    labels[l].center = (view.width * (l + 0.55), view.height * 3.6)
+    labels[l].center = (view.width * (l + 0.45) * 0.8, view.height * 3.6)
     view.add_subview(labels[l])
 
 s_sym = ui.Switch()
-s_alp = ui.Switch()
+s_cap = ui.Switch()
+s_low = ui.Switch()
 s_num = ui.Switch()
-switches = (s_sym, s_alp, s_num, )
+switches = (s_sym, s_cap, s_low, s_num, )
 
 for sw in switches:
     sw.value = True
-    sw.center = (view.width * (switches.index(sw) + 0.55), view.height * 3.9)
+    sw.center = (view.width * (switches.index(sw) + 0.45) * 0.8, view.height * 3.9)
     view.add_subview(sw)
 
 choices = 10
@@ -50,6 +52,39 @@ button_refresh.font = ('<system-bold>', 16)
 button_refresh.enabled = True
 view.add_subview(button_refresh)
 
+tuple_cc_sym = ((33, 48), (58, 65), (91, 97), (123, 127))
+tuple_cc_cap = ((65, 91),)
+tuple_cc_low = ((97, 123),)
+tuple_cc_num = ((48, 58),)
+
+
+def mk_list_of_characters(tuple_cc):
+    ls = []
+    for tpl in tuple_cc:
+        ls += [chr(c) for c in range(tpl[0], tpl[1])]
+    return ls
+
+
+ls_sym = mk_list_of_characters(tuple_cc_sym)
+ls_cap = mk_list_of_characters(tuple_cc_cap)
+ls_low = mk_list_of_characters(tuple_cc_low)
+ls_num = mk_list_of_characters(tuple_cc_num)
+
+
+def get_available_char():
+    list_string_list = []
+    # Convert each list to another list
+    # to prevent overwriting the original list in the later steps
+    if s_sym.value:
+        list_string_list.append(list(ls_sym))
+    if s_cap.value:
+        list_string_list.append(list(ls_cap))
+    if s_low.value:
+        list_string_list.append(list(ls_low))
+    if s_num.value:
+        list_string_list.append(list(ls_num))
+    return list_string_list
+
 
 def get_length():
     return int(sl_length.value * 10 + 5)
@@ -58,36 +93,28 @@ def get_length():
 l_length.text = 'len: ' + str(get_length())
 
 
-def set_s():
-    string_list = []
+def set_pw():
     length = get_length()
-
-    if s_sym.value is True:
-        string_list += [chr(c) for c in range(33, 48)]
-        string_list += [chr(c) for c in range(58, 65)]
-        string_list += [chr(c) for c in range(91, 97)]
-        string_list += [chr(c) for c in range(123, 127)]
-
-    if s_alp.value is True :
-        string_list += [chr(c) for c in range(65, 91)]
-        string_list += [chr(c) for c in range(97, 123)]
-
-    if s_num.value is True:
-        string_list += [chr(c) for c in range(48, 58)]
-
-    if length > len(string_list):
-        string_list = string_list * (length // len(string_list) + 1)
-
-    return string_list
-
-
-def set_pw(string_list):
-    pw_list = []
-    length = get_length()
-
+    list_pw_string = []
     for k in range(choices):
-        pw_list.append(''.join(random.sample(string_list, length)))
-    return pw_list
+        list_string_list = get_available_char()
+        pw_list = []
+        for string_list in list_string_list:
+            random.shuffle(string_list)
+            pw_list.append(string_list.pop())
+        if len(pw_list) > length:
+            list_pw_string.append(''.join(random.sample((list(pw_list)), length)))
+            continue
+        elif len(pw_list) == length:
+            list_pw_string.append(''.join(pw_list))
+        else:
+            remaining_string = ''.join([''.join(ls) for ls in list_string_list])
+            if length > len(pw_list) + len(remaining_string):
+                remaining_string = remaining_string + ''.join([''.join(ls) for ls in get_available_char()]) * (length - len(pw_list) // len(remaining_string))
+            pw_list.append(''.join(random.sample(remaining_string, length - len(pw_list))))
+            random.shuffle(pw_list)
+            list_pw_string.append(''.join(pw_list))
+    return list_pw_string
 
 
 def buttons_disable():
@@ -103,7 +130,7 @@ def buttons_enable():
 def button_tapped(sender):
     prefix = 'You chose '
     suffix = ' !'
-    if sender.title.startswith(prefix) is False:
+    if not sender.title.startswith(prefix):
         clipboard.set(sender.title)
         sender.font = ('<system-bold>', 16)
         sender.title = prefix + sender.title + suffix
@@ -117,10 +144,9 @@ buttons = [ui.Button(title='') for k in range(choices)]
 
 
 def set_buttons():
-    string_list = set_s()
-    pw_list = set_pw(string_list)
+    list_pw_string = set_pw()
     for k in range(choices):
-        buttons[k].title = pw_list[k]
+        buttons[k].title = list_pw_string[k]
         buttons[k].center = (view.width * 0.5, view.height * (3.1 * (k+0.5) / choices) + 30)
         buttons[k].flex = 'W'
         buttons[k].font = ('<sys-tem>', 16)
@@ -130,10 +156,9 @@ def set_buttons():
 
 
 def refresh_tapped(sender):
-    s = set_s()
-    pw = set_pw(s)
+    list_pw_string = set_pw()
     for k in range(choices):
-        buttons[k].title = pw[k]
+        buttons[k].title = list_pw_string[k]
         buttons[k].font = ('<sys-tem>', 16)
     buttons_enable()
     l_length.text = 'len: ' + str(get_length())
