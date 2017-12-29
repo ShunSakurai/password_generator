@@ -59,42 +59,35 @@ l_length.text = 'len: ' + str(get_length())
 
 
 def set_s():
-    s = []
+    string_list = []
     length = get_length()
 
     if s_sym.value is True:
-        s += [chr(c) for c in range(33, 48)]
-        s += [chr(c) for c in range(58, 65)]
-        s += [chr(c) for c in range(91, 97)]
-        s += [chr(c) for c in range(123, 127)]
+        string_list += [chr(c) for c in range(33, 48)]
+        string_list += [chr(c) for c in range(58, 65)]
+        string_list += [chr(c) for c in range(91, 97)]
+        string_list += [chr(c) for c in range(123, 127)]
 
     if s_alp.value is True :
-        s += [chr(c) for c in range(65, 91)]
-        s += [chr(c) for c in range(97, 123)]
+        string_list += [chr(c) for c in range(65, 91)]
+        string_list += [chr(c) for c in range(97, 123)]
 
     if s_num.value is True:
-        s += [chr(c) for c in range(48, 58)]
+        string_list += [chr(c) for c in range(48, 58)]
 
-    if length > len(s):
-        s = s * (length // len(s) + 1)
+    if length > len(string_list):
+        string_list = string_list * (length // len(string_list) + 1)
 
-    return s
+    return string_list
 
 
-def set_pw(s):
-    pw = ['']
+def set_pw(string_list):
+    pw_list = []
     length = get_length()
 
     for k in range(choices):
-        if s_num.value is True:
-            while search('[0-9]', pw[k]) is None:
-                pw[k] = ''.join(random.sample(s, length))
-            pw.append('')
-        else:
-            pw[k] = ''.join(random.sample(s, length))
-            pw.append('')
-    pw.remove('')
-    return pw
+        pw_list.append(''.join(random.sample(string_list, length)))
+    return pw_list
 
 
 def buttons_disable():
@@ -124,10 +117,10 @@ buttons = [ui.Button(title='') for k in range(choices)]
 
 
 def set_buttons():
-    s = set_s()
-    pw = set_pw(s)
+    string_list = set_s()
+    pw_list = set_pw(string_list)
     for k in range(choices):
-        buttons[k].title = pw[k]
+        buttons[k].title = pw_list[k]
         buttons[k].center = (view.width * 0.5, view.height * (3.1 * (k+0.5) / choices) + 30)
         buttons[k].flex = 'W'
         buttons[k].font = ('<sys-tem>', 16)

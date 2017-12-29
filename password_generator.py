@@ -9,7 +9,7 @@ py password_generator.py
 
 import tkinter
 import random
-from re import search
+import re
 
 view = tkinter.Frame()
 
@@ -26,6 +26,8 @@ tuple_cc_sym = ((33, 48), (58, 65), (91, 97), (123, 127))
 tuple_cc_cap = ((65, 91),)
 tuple_cc_low = ((97, 123),)
 tuple_cc_num = ((48, 58),)
+
+pattern_space = re.compile(r'\s')
 
 
 def mk_list_of_characters(tuple_cc):
@@ -99,49 +101,42 @@ sc_choices.pack()
 
 
 def get_available_char():
-    ls_sym = list(var_str_sym.get())
-    ls_cap = list(var_str_cap.get())
-    ls_low = list(var_str_low.get())
-    ls_num = list(var_str_num.get())
+    ls_sym = list(pattern_space.sub('', var_str_sym.get()))
+    ls_cap = list(pattern_space.sub('', var_str_cap.get()))
+    ls_low = list(pattern_space.sub('', var_str_low.get()))
+    ls_num = list(pattern_space.sub('', var_str_num.get()))
     return {'sym': ls_sym, 'cap': ls_cap, 'low': ls_low, 'num': ls_num}
 
 
-def set_s():
+def set_string_list():
     length = sc_length.get()
     dict_available_char = get_available_char()
-    s = []
-    if var_bool_sym.get() is True:
-        s += dict_available_char['sym']
+    string_list = []
+    if var_bool_sym.get():
+        string_list += dict_available_char['sym']
 
-    if var_bool_cap.get() is True:
-        s += dict_available_char['cap']
+    if var_bool_cap.get():
+        string_list += dict_available_char['cap']
 
-    if var_bool_low.get() is True:
-        s += dict_available_char['low']
+    if var_bool_low.get():
+        string_list += dict_available_char['low']
 
-    if var_bool_num.get() is True:
-        s += dict_available_char['num']
+    if var_bool_num.get():
+        string_list += dict_available_char['num']
 
-    if length > len(s):
-        s = s * (length // len(s) + 1)
+    if length > len(string_list):
+        string_list = string_list * (length // len(string_list) + 1)
 
-    return s
+    return string_list
 
 
-def set_pw(s):
+def set_pw(string_list):
     choices = sc_choices.get()
     length = sc_length.get()
-    pw = ['']
+    pw_list = []
     for k in range(choices):
-        if var_bool_num.get() is True and length != 1:
-            while search('[0-9]', pw[k]) is None:
-                pw[k] = ''.join(random.sample(s, length))
-            pw.append('')
-        else:
-            pw[k] = ''.join(random.sample(s, length))
-            pw.append('')
-    pw.remove('')
-    return pw
+        pw_list.append(''.join(random.sample(string_list, length)))
+    return pw_list
 
 
 def change_all_state(state):
@@ -154,7 +149,7 @@ def button_tapped(self):
     suffix = ' !'
     if self.widget['state'] == 'disabled':
         return
-    elif self.widget['text'].startswith(prefix) is False:
+    elif not self.widget['text'].startswith(prefix):
         self.widget['text'] = prefix + self.widget['text'] + suffix
         self.widget['borderwidth'] = 2
         change_all_state('disabled')
@@ -169,12 +164,12 @@ def button_tapped(self):
 def set_buttons():
     for child in subview_right.winfo_children():
         child.destroy()
-    s = set_s()
-    pw = set_pw(s)
+    string_list = set_string_list()
+    pw_list = set_pw(string_list)
     choices = sc_choices.get()
     buttons = [tkinter.Button(subview_right, text='') for k in range(choices)]
     for k in range(choices):
-        buttons[k]['text'] = pw[k]
+        buttons[k]['text'] = pw_list[k]
         buttons[k]['borderwidth'] = 1
         buttons[k].bind('<ButtonRelease-1>', button_tapped)
         buttons[k].pack()
