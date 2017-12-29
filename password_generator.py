@@ -1,20 +1,26 @@
 # coding: utf-8
 '''
+cd /d z:
 cd Dropbox/Codes/password_generator
 py password_generator.py
 '''
+
+# Terms taken from Pythonista
+
 import tkinter
 import random
 from re import search
 
 view = tkinter.Frame()
 
-subview_up = tkinter.Frame(view)
+subview_up_left = tkinter.Frame(view)
+subview_up_right = tkinter.Frame(view)
 subview_left = tkinter.Frame(view)
 subview_right = tkinter.Frame(view)
-subview_up.grid(row=0, column=0, columnspan=2)
-subview_left.grid(row=1, column=0, sticky='n')
-subview_right.grid(row=1, column=1)
+subview_up_left.grid(row=0, column=0)
+subview_up_right.grid(row=0, column=1)
+subview_left.grid(row=1, column=0, padx=5, pady=20, sticky='n')
+subview_right.grid(row=1, column=1, pady=5)
 
 tuple_cc_sym = ((33, 48), (58, 65), (91, 97), (123, 127))
 tuple_cc_cap = ((65, 91),)
@@ -39,24 +45,24 @@ str_cap = ''.join(ls_init_cap)
 str_low = ''.join(ls_init_low)
 str_num = ''.join(ls_init_num)
 
-var_str_sym = tkinter.StringVar(subview_up)
-var_str_cap = tkinter.StringVar(subview_up)
-var_str_low = tkinter.StringVar(subview_up)
-var_str_num = tkinter.StringVar(subview_up)
+var_str_sym = tkinter.StringVar(subview_up_left)
+var_str_cap = tkinter.StringVar(subview_up_left)
+var_str_low = tkinter.StringVar(subview_up_left)
+var_str_num = tkinter.StringVar(subview_up_left)
 
 var_str_sym.set(str_sym)
 var_str_cap.set(str_cap)
 var_str_low.set(str_low)
 var_str_num.set(str_num)
 
-ent_sym = tkinter.Entry(subview_up, width=30, textvariable=var_str_sym)
-ent_cap = tkinter.Entry(subview_up, width=30, textvariable=var_str_cap)
-ent_low = tkinter.Entry(subview_up, width=30, textvariable=var_str_low)
-ent_num = tkinter.Entry(subview_up, width=30, textvariable=var_str_num)
+ent_sym = tkinter.Entry(subview_up_right, width=40, textvariable=var_str_sym)
+ent_cap = tkinter.Entry(subview_up_right, width=40, textvariable=var_str_cap)
+ent_low = tkinter.Entry(subview_up_right, width=40, textvariable=var_str_low)
+ent_num = tkinter.Entry(subview_up_right, width=40, textvariable=var_str_num)
 entries = (ent_sym, ent_cap, ent_low, ent_num)
 
 for ent in entries:
-    ent.pack()
+    ent.pack(pady=3)
 
 
 var_bool_sym = tkinter.BooleanVar()
@@ -66,10 +72,10 @@ var_bool_num = tkinter.BooleanVar()
 variables_bool = (var_bool_sym, var_bool_cap, var_bool_low, var_bool_num)
 
 lname = ('sym', 'cap', 'low', 'num')
-sw_sym = tkinter.Checkbutton(subview_left, text=lname[0])
-sw_cap = tkinter.Checkbutton(subview_left, text=lname[1])
-sw_low = tkinter.Checkbutton(subview_left, text=lname[2])
-sw_num = tkinter.Checkbutton(subview_left, text=lname[3])
+sw_sym = tkinter.Checkbutton(subview_up_left, text=lname[0])
+sw_cap = tkinter.Checkbutton(subview_up_left, text=lname[1])
+sw_low = tkinter.Checkbutton(subview_up_left, text=lname[2])
+sw_num = tkinter.Checkbutton(subview_up_left, text=lname[3])
 switches = (sw_sym, sw_cap, sw_low, sw_num,)
 
 for sw in switches:
@@ -171,7 +177,7 @@ def set_buttons():
         buttons[k]['text'] = pw[k]
         buttons[k]['borderwidth'] = 1
         buttons[k].bind('<ButtonRelease-1>', button_tapped)
-        buttons[k].grid(row=k)
+        buttons[k].pack()
     change_all_state('normal')
 
 
@@ -189,7 +195,7 @@ def refresh_tapped(self):
 button_refresh = tkinter.Button(subview_left, text='refresh')
 button_refresh['state'] = 'normal'
 button_refresh.bind('<ButtonRelease-1>', refresh_tapped)
-button_refresh.pack()
+button_refresh.pack(pady=20)
 
 sc_length['command'] = refresh_tapped
 sc_choices['command'] = refresh_tapped
