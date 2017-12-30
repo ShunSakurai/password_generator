@@ -122,6 +122,8 @@ def set_pw():
         list_string_list = get_available_char()
         pw_list = []
         for string_list in list_string_list:
+            if len(string_list) == 0:
+                continue
             random.shuffle(string_list)
             pw_list.append(string_list.pop())
         if len(pw_list) > length:
@@ -181,7 +183,7 @@ for sw in switches:
 set_buttons()
 
 
-def refresh_tapped(self):
+def refresh_tapped(self, *w):
     random.seed()
     set_buttons()
 
@@ -190,6 +192,9 @@ button_refresh = tkinter.Button(subview_left, text='refresh')
 button_refresh['state'] = 'normal'
 button_refresh.bind('<ButtonRelease-1>', refresh_tapped)
 button_refresh.pack(pady=20)
+
+for var in [var_str_sym, var_str_cap, var_str_low, var_str_num]:
+    var.trace('w', refresh_tapped)
 
 sc_length['command'] = refresh_tapped
 sc_choices['command'] = refresh_tapped

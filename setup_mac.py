@@ -10,7 +10,7 @@ dict_console = {
     'dest_base': 'Password Generator',
     'icon_resources': [(1, './icons/password_icon.icns')],
     'script': 'password_generator.py',
-    'version': '1.3.0'
+    'version': '1.3.1'
 }
 
 dict_options = {
