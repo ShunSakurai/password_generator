@@ -9,7 +9,7 @@
 1クリックでクリップボードにパスワードをコピーできるような、**シンプルな**パスワード生成ツールを作りたいと思い、このツールを開発しました。
 既存のプログラムやウェブサイトの多くは、パスワードをコピーするために(パスワードをドラッグして選択、右クリック、コピーの)3アクションが必要です。
 
-このツールは、Pythonとtkinterを使用してコーディングし、[PyInstaller](http://www.pyinstaller.org/)と[Verpatch](https://www.codeproject.com/Articles/37133/Simple-Version-Resource-Tool-for-Windows)を使用して.exe形式で配布、[PyInstaller](http://www.pyinstaller.org/)を使用してMacの.app形式で配布するものです。
+このツールは、Pythonとtkinterを使用してコーディングし、[PyInstaller](http://www.pyinstaller.org/)と[Verpatch](https://ddverpatch.codeplex.com/releases)を使用して.exe形式で配布、[PyInstaller](http://www.pyinstaller.org/)を使用してMacの.app形式で配布するものです。
 
 ## インストール
 現在、WindowsとMacに対応しています。インストーラーと実行可能ファイルは[Releases(リリース)](https://github.com/ShunSakurai/password_generator/releases)で入手できます。iOS版も、[Pythonista](http://omz-software.com/pythonista/)のコードとして入手できます。URLスキームのpythonista://password_iphone.pyを使用して実行したり、ホーム画面に追加することができます。
@@ -48,7 +48,7 @@ Pythonコードを.exeファイルに変換し、インストーラーを作成�
 ### 要件
 - [Python 3](https://www.python.org/downloads/)
 - [PyInstaller](http://www.pyinstaller.org/)
-- [Verpatch](https://www.codeproject.com/Articles/37133/Simple-Version-Resource-Tool-for-Windows)、パスを通してください
+- [Verpatch](https://ddverpatch.codeplex.com/releases)、パスを通してください
 - [Inno Setup](http://www.jrsoftware.org/isdl.php)
 
 ### 手順
@@ -61,7 +61,7 @@ Pythonコードを.appファイルに変換するには、次の手順に従い�
 ### 要件
 - [Python 3](https://www.python.org/downloads/)
 - [PyInstaller](http://www.pyinstaller.org/)
-- [Verpatch](https://www.codeproject.com/Articles/37133/Simple-Version-Resource-Tool-for-Windows)、パスを通してください
+- [Verpatch](https://ddverpatch.codeplex.com/releases)、パスを通してください
 - [Inno Setup](http://www.jrsoftware.org/isdl.php)
 
 ### 手順
@@ -102,7 +102,7 @@ Pythonコードを.appファイルに変換するには、次の手順に従い�
 Pythonのrandomモジュールの擬似乱数生成器をセキュリティ目的に使用してはいけませんという注意書きがあることにご注意ください。
 https://docs.python.org/3/library/random.html#module-random
 
-© 2016-2017 Shun Sakurai
+© 2016-2018 Shun Sakurai
 
 ## 基本的な考え方
 - このプログラムでは4グループの文字列を使用します(デフォルトは以下のとおりです)

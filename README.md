@@ -9,7 +9,7 @@ Simple password generators
 The purpose of developing this tool is to create a **simple** password generator that lets the user copy the generated password to the clipboard with a single click.
 Many programs and websites out there require three actions (drag on the password, right-click, and copy) to do this.
 
-This program is coded in Python with tkinter and is distributed in .exe format through [PyInstaller](http://www.pyinstaller.org/) and [Verpatch](https://www.codeproject.com/Articles/37133/Simple-Version-Resource-Tool-for-Windows), and in Mac .app format through [PyInstaller](http://www.pyinstaller.org/).
+This program is coded in Python with tkinter and is distributed in .exe format through [PyInstaller](http://www.pyinstaller.org/) and [Verpatch](https://ddverpatch.codeplex.com/releases), and in Mac .app format through [PyInstaller](http://www.pyinstaller.org/).
 
 ## Installation
 The installer and executable are available for Windows and Mac at [Releases](https://github.com/ShunSakurai/password_generator/releases). An iOS version is also available as a [Pythonista](http://omz-software.com/pythonista/) code. You can run it by using the URL scheme pythonista://password_iphone.py or add it to the home screen.
@@ -45,7 +45,7 @@ data:text/html;charset=UTF-8,<title>Password</title><meta name="apple-mobile-web
 ### Requirements
 - [Python 3](https://www.python.org/downloads/)
 - [PyInstaller](http://www.pyinstaller.org/)
-- [Verpatch](https://www.codeproject.com/Articles/37133/Simple-Version-Resource-Tool-for-Windows), add it to PATH (required for Windows)
+- [Verpatch](https://ddverpatch.codeplex.com/releases), add it to PATH (required for Windows)
 - [Inno Setup](http://www.jrsoftware.org/isdl.php) (required for Windows)
 
 ### Windows
@@ -94,7 +94,7 @@ You can use it for free. Personal use only. I do not take any responsibility for
 Please note that it is stated that the pseudo-random generators of Python's random module should not be used for security purposes.
 https://docs.python.org/3/library/random.html#module-random
 
-© 2016-2017 Shun Sakurai
+© 2016-2018 Shun Sakurai
 
 ## Basic idea
 - This program uses four groups of strings, with the default being as shown below
