@@ -128,16 +128,15 @@ def buttons_enable():
 
 
 def button_tapped(sender):
-    prefix = 'You chose '
-    suffix = ' !'
+    prefix = 'You chose: '
     if not sender.title.startswith(prefix):
         clipboard.set(sender.title)
         sender.font = ('<system-bold>', 16)
-        sender.title = prefix + sender.title + suffix
+        sender.title = prefix + sender.title
         buttons_disable()
         sender.enabled = True
     else:
-        clipboard.set(sender.title[len(prefix):-len(suffix)])
+        clipboard.set(sender.title[len(prefix):])
 
 
 buttons = [ui.Button(title='') for k in range(choices)]

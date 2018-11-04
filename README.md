@@ -83,7 +83,7 @@ Please let me know from [Github Issues](https://github.com/ShunSakurai/password_
 ## History
 For detailed history, please go to [Releases](https://github.com/ShunSakurai/password_generator/releases).
 
-"*" at the beginning means bug-fixing.
+"\*" at the beginning means bug-fixing.
 
 ## Contribution
 This is just a personal project and I do not really know what kind of contribution I may get. Any feedback and contribution from [Github Issues](https://github.com/ShunSakurai/password_generator/issues) or [Asana](https://app.asana.com/0/264055467962183/list) is welcome!

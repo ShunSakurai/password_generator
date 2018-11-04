@@ -147,12 +147,11 @@ def change_all_state(state):
 
 
 def button_tapped(self):
-    prefix = 'You chose '
-    suffix = ' !'
+    prefix = 'You chose: '
     if self.widget['state'] == 'disabled':
         return
     elif not self.widget['text'].startswith(prefix):
-        self.widget['text'] = prefix + self.widget['text'] + suffix
+        self.widget['text'] = prefix + self.widget['text']
         self.widget['borderwidth'] = 2
         change_all_state('disabled')
         self.widget['state'] = 'normal'
@@ -160,7 +159,7 @@ def button_tapped(self):
         pass
 
     view.clipboard_clear()
-    view.clipboard_append(self.widget['text'][len(prefix):-len(suffix)])
+    view.clipboard_append(self.widget['text'][len(prefix):])
 
 
 def set_buttons():

@@ -10,7 +10,7 @@ dict_console = {
     'dest_base': 'Password Generator',
     'icon_resources': [(1, './icons/password_icon.icns')],
     'script': 'password_generator.py',
-    'version': '1.3.1'
+    'version': '1.3.2'
 }
 
 dict_options = {
@@ -52,7 +52,10 @@ if __name__ == "__main__":
         '--distpath', folder_dist,
         '--windowed',
         '--icon', dict_console['icon_resources'][0][1],
-        '--name', dict_console['dest_base']
+        '--name', dict_console['dest_base'],
+        # https://github.com/pyinstaller/pyinstaller/issues/1350#issuecomment-404048492
+        '--add-binary=/System/Library/Frameworks/Tk.framework/Tk:tk',
+        '--add-binary=/System/Library/Frameworks/Tcl.framework/Tcl:tcl'
     ] + list_excluded + [dict_console['script']]
 
     if os.path.exists(folder_dist):
